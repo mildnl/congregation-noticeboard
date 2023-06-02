@@ -1,7 +1,5 @@
 <script>
   import { _, setupI18n } from '../services/i18n/i18n';
-  import Header from '../components/Header.svelte';
-  import Menu from '../components/Menu.svelte';
   import Meetings from '../views/Meetings.svelte';
   import Ministry from '../views/Ministry.svelte';
   import Radio from '../views/Radio.svelte';
@@ -18,7 +16,7 @@
     i18n.setLocale('en');
   });
 
-  let SelectedComponent = null;
+  let SelectedComponent = Meetings;
 
   const components = [
         { id: 'menu.meetings', component: Meetings, },
@@ -132,6 +130,7 @@
   nav a:nth-child(4):after {
     background: #f26667;
   }
+
 </style>
 
 <main>

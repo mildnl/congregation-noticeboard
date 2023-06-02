@@ -1,0 +1,33 @@
+<script>
+    import { _ } from '../services/i18n/i18n';
+    export let tableData = [
+        {
+            date: "01.01.2000",
+            time: "0:00-23:59",
+            topic: "The Truth"
+        }
+    ]
+    export let channelName = "Channel"
+</script>
+
+<h2>{channelName}</h2>
+<table>
+  <tbody>
+    <th>{$_('radio.date')}</th>
+    <th>{$_('radio.time')}</th>
+    <th>{$_('radio.topic')}</th>
+    {#each tableData as data }
+    <tr>
+      <td>
+        {data.date}
+      </td>
+      <td>
+        {data.time}
+      </td>
+      <td>
+        {data.topic}
+      </td>
+    </tr>
+    {/each}
+  </tbody>
+</table>

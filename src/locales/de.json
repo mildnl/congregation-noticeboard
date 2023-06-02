@@ -12,24 +12,34 @@
   },
   "meeting": {
     "life-and-ministry": {
-      "part-one": "Schätze aus Gottes Wort",
+      "title": "Schätze aus Gottes Wort",
       "talk": "10 Minuten Vortrag",
       "gems": "Nach geistigen Schätzen graben",
       "bible-reading": "Bibellesung"
     },
     "improve-your-ministry": {
+      "title": "Uns im Dienst verbessern",
       "initial-call": "Erstes Gespräch",
       "return-visit": "Rückbesuch",
       "biblestudy": "Bibelstudium",
       "talk": "5 Minuten Vortrag"
     },
     "christian-life": {
-      "congregation-biblestudy": "Versammlungsbibelstudium"
+      "congregation-biblestudy": "Versammlungsbibelstudium",
+      "reader": "Leser"
     },
     "song": "Lied",
     "prayer": "Gebet",
-    "comments": "Schlussworte"
+    "initial-comments": "Einleitende Worte",
+    "final-comments": "Schlussworte"
   },
-    "conjunction": "und"
+    "conjunction": "und",
+    "radio": {
+      "title": "Radiosendungen von Jehovas Zeugen",
+      "description": "Gern möchten wir euch über die Sendetermine und Themen der Radiosendungen für das Jahr {year} informieren.",
+      "date": "Datum",
+      "time": "Uhrzeit",
+      "topic": "Thema"
+    }
 
 }

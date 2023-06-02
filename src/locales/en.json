@@ -12,23 +12,33 @@
   },
   "meeting": {
     "life-and-ministry": {
-      "part-one": "Treasures from God’s Word",
+      "title": "Treasures from God’s Word",
       "talk": "10 minute Talk",
       "gems": "Spiritual Gems",
       "bible-reading": "Bible Reading"
     },
     "improve-your-ministry": {
+      "title": "Improove your Ministry",
       "initial-call": "Initial Call",
       "return-visit": "Return Visit",
       "biblestudy": "Bibel Study",
       "talk": "5 minute Talk"
     },
     "christian-life": {
-      "congregation-biblestudy": "Congregation Bible Study"
+      "congregation-biblestudy": "Congregation Bible Study",
+      "reader": "Reader"
     },
     "song": "Song",
     "prayer": "Prayer",
-    "comments": "Concluding Comments"
+    "initial-comments": "Initial Comments",
+    "final-comments": "Concluding Comments"
   },
-    "conjunction": "and"
+    "conjunction": "and",
+    "radio": {
+      "title": "Radio Programm from Jehovahs Witnesses",
+      "description": "We would like to inform you about the broadcasting dates and topics of the radio programs for the year {year}.",
+      "date": "Date",
+      "time": "Time",
+      "topic": "Topic"
+    }
 }
