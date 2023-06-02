@@ -11,20 +11,21 @@
       "title":"Versammlung Bad Arolsen"
   },
   "meeting": {
-    "life-and-ministry": {
+    "treasures": {
       "title": "Schätze aus Gottes Wort",
       "talk": "10 Minuten Vortrag",
       "gems": "Nach geistigen Schätzen graben",
       "bible-reading": "Bibellesung"
     },
-    "improve-your-ministry": {
+    "ministry": {
       "title": "Uns im Dienst verbessern",
       "initial-call": "Erstes Gespräch",
       "return-visit": "Rückbesuch",
-      "biblestudy": "Bibelstudium",
+      "bible-study": "Bibelstudium",
       "talk": "5 Minuten Vortrag"
     },
-    "christian-life": {
+    "life": {
+      "title": "Unser Leben als Christen",
       "congregation-biblestudy": "Versammlungsbibelstudium",
       "reader": "Leser"
     },

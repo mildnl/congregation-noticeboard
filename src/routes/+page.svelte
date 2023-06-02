@@ -22,7 +22,7 @@
         { id: 'menu.meetings', component: Meetings, },
         { id: 'menu.ministry', component: Ministry, },
         { id: 'menu.radio', component: Radio, },
-        { id: 'menu.announcments', component: Announcements, },
+        { id: 'menu.announcements', component: Announcements, },
         { id: 'menu.organisation', component: Organisation, },
         { id: 'menu.conventions', component: Conventions, }
     ];
@@ -42,8 +42,10 @@
   :global(body) {
     background-color: hsl(201, 51%, 66%);
     background: radial-gradient(closest-corner, hsl(201, 51%, 66%) 60%, rgba(hsl(201, 51%, 66%), 0.26));
-    width: 100%;
+    width: 80%;
     height: 100%;
+    justify-content: center;
+    padding: auto;
     background-repeat: no-repeat;
   }
 
