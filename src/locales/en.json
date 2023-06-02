@@ -1,0 +1,34 @@
+{
+  "menu": {
+        "meetings": "Congregation Meetings",
+        "ministry": "Ministry",
+        "radio": "Radio",
+        "announcements": "Announcements",
+        "organisation": "Congregation Organization",
+        "conventions": "Conventions"
+      },
+  "header": {
+    "title":"Congregation Bad Arolsen"
+  },
+  "meeting": {
+    "life-and-ministry": {
+      "part-one": "Treasures from God’s Word",
+      "talk": "10 minute Talk",
+      "gems": "Spiritual Gems",
+      "bible-reading": "Bible Reading"
+    },
+    "improve-your-ministry": {
+      "initial-call": "Initial Call",
+      "return-visit": "Return Visit",
+      "biblestudy": "Bibel Study",
+      "talk": "5 minute Talk"
+    },
+    "christian-life": {
+      "congregation-biblestudy": "Congregation Bible Study"
+    },
+    "song": "Song",
+    "prayer": "Prayer",
+    "comments": "Concluding Comments"
+  },
+    "conjunction": "and"
+}

@@ -1,0 +1,35 @@
+{
+  "menu": {
+    "meetings": "Zusammenkünfte",
+    "ministry": "Predigdienst",
+    "radio": "Radiosendung",
+    "announcements": "Bekanntmachungen",
+    "organisation": "Versammlungs Organisation",
+    "conventions": "Kongresse"
+  },
+    "header": {
+      "title":"Versammlung Bad Arolsen"
+  },
+  "meeting": {
+    "life-and-ministry": {
+      "part-one": "Schätze aus Gottes Wort",
+      "talk": "10 Minuten Vortrag",
+      "gems": "Nach geistigen Schätzen graben",
+      "bible-reading": "Bibellesung"
+    },
+    "improve-your-ministry": {
+      "initial-call": "Erstes Gespräch",
+      "return-visit": "Rückbesuch",
+      "biblestudy": "Bibelstudium",
+      "talk": "5 Minuten Vortrag"
+    },
+    "christian-life": {
+      "congregation-biblestudy": "Versammlungsbibelstudium"
+    },
+    "song": "Lied",
+    "prayer": "Gebet",
+    "comments": "Schlussworte"
+  },
+    "conjunction": "und"
+
+}
