@@ -4,7 +4,12 @@
         "ministry": "Ministry",
         "radio": "Radio",
         "announcements": "Announcements",
-        "organisation": "Congregation Organization",
+        "organisation": {
+            "title": "Congregation Organization",
+            "cleaning": "Cleaning",
+            "ministry-groups": "Ministry Groups",
+            "organisation-plan": "Organisation Plan"
+          },
         "conventions": "Conventions"
       },
   "header": {
@@ -41,5 +46,10 @@
       "date": "Date",
       "time": "Time",
       "topic": "Topic"
+    },
+    "organisation": {
+      "cleaning": {
+        "title": "Reinigung des Königreichssaals in Bad Arolsen"
+      }
     }
 }

@@ -21,4 +21,4 @@ footer a {
 }
 </style>
 
-<h1>{$_('menu.ministry')}</h1>
+<h1 class="w3-center w3-padding">{$_('menu.ministry')}</h1>

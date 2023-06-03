@@ -24,11 +24,6 @@
   }
 </script>
 <style>
-  div.header {
-    text-align: center;
-    margin-left: auto;
-  }
-
   footer {
   position:relative;
   bottom: 0;
@@ -46,12 +41,13 @@ footer a {
   margin-left: 5px;
 }
 </style>
-<div class="header">
+<div class="w3-center w3-padding">
   <h1>{$_('menu.meetings')}</h1>
 </div>
-
-<MeetingProgramm meetingData={meetingData}/>
-
+<div class="w3-row">
+  <div class="w3-col w3-container"><MeetingProgramm meetingData={meetingData}/></div>
+  
+</div>
 
 <footer>
   <a href="https://www.flaticon.com/de/kostenlose-icons/diamant" title="diamant Icons">Freepik - Diamant</a>

@@ -98,16 +98,18 @@ footer a {
   margin-left: 10px;
 }
 </style>
-
-<h1>{$_('menu.radio')}</h1>
-<div>
-  <h3>{$_('radio.title')}</h3>
-  <p>{$_('radio.description').replace('{year}', currentYear)}</p>
+<div class="w3-container">
+  <h1  class="w3-center w3-padding">{$_('menu.radio')}</h1>
+  <div>
+    <h3>{$_('radio.title')}</h3>
+    <p>{$_('radio.description').replace('{year}', currentYear)}</p>
+  </div>
+  
+  {#each Object.entries(tableData) as [channelName, data]}
+    <RadioProgramm tableData={data} channelName={channelName} />
+  {/each}
 </div>
 
-{#each Object.entries(tableData) as [channelName, data]}
-  <RadioProgramm tableData={data} channelName={channelName} />
-{/each}
 
 <footer>
   <a href="https://www.br.de/radio/live/bayern2/">BR2 Livestream</a>

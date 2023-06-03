@@ -4,7 +4,12 @@
     "ministry": "Predigdienst",
     "radio": "Radiosendung",
     "announcements": "Bekanntmachungen",
-    "organisation": "Versammlungs Organisation",
+    "organisation": {
+      "title": "Versammlungs Organisation",
+      "cleaning": "Reinigung",
+      "ministry-groups": "Predigdienstgruppen",
+      "organisation-plan": "Orgplan"
+    },
     "conventions": "Kongresse"
   },
     "header": {
