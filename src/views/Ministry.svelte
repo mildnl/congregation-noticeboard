@@ -1,6 +1,21 @@
 <script>
   import MinistrySchedule from '../components/MinistrySchedule.svelte';
-import { _ } from '../services/i18n/i18n';
+	import Modal from '../components/Modal.svelte';
+  import { _ } from '../services/i18n/i18n';
+
+  let showModalInfoStand = false;
+  let showModalVisit = false;
+  let SelectedComponent = MinistrySchedule;
+
+  const components = [
+        { id: 'ministry.schedule', component: MinistrySchedule, },
+        { id: 'ministry.trolley', component: MinistrySchedule, },
+        { id: 'ministry.infostand', component: Modal, },
+        { id: 'ministry.co-visit', component: Modal, }
+    ];
+  async function handleMenuItemSelected(item) {
+      SelectedComponent = components.find(type => type.id == item).component;
+  }
 </script>
 <style>
      footer {
@@ -25,15 +40,28 @@ footer a {
 <h1 class="w3-center w3-padding w3-panel w3-yellow">{$_('menu.ministry')}</h1>
 <div class="w3-padding">
   <div class="w3-bar w3-white w3-border">
-    <a href="#top" class="w3-bar-item w3-button w3-hover-yellow" style="width:33%">{$_('menu.organisation.cleaning')}</a>
-    <a href="#top" class="w3-bar-item w3-button w3-hover-yellow" style="width:33%">{$_('menu.organisation.ministry-groups')}</a>
-    <a href="#top" class="w3-bar-item w3-button w3-hover-yellow" style="width:33%">{$_('menu.organisation.organisation-plan')}</a>
+    <a href="#top" on:click={handleMenuItemSelected('ministry.schedule')} class="w3-bar-item w3-button w3-hover-yellow" style="width:25%">{$_('ministry.schedule')}</a>
+    <a href="#top" on:click={handleMenuItemSelected('ministry.schedule')} class="w3-bar-item w3-button w3-hover-yellow" style="width:25%">{$_('ministry.trolley')}</a>
+    <a href="#top" on:click={() => showModalInfoStand = true} class="w3-bar-item w3-button w3-hover-yellow" style="width:25%">{$_('ministry.infostand')}</a>
+    <a href="#top" on:click={() => showModalVisit = true} class="w3-bar-item w3-button w3-hover-yellow" style="width:25%">{$_('ministry.co-visit')}</a>
   </div>
 </div>
 <div class="w3-container">
-  <MinistrySchedule/>
+  <div class="w3-container">
+      {#if SelectedComponent}
+        <svelte:component this={SelectedComponent} />
+      {/if}
+    </div>
 </div>
-
+<Modal showModal={showModalInfoStand}>
+	<h4>{$_('ministry.co-visit')}</h4>
+	<p>Die nächste Besuchswoche ist vom 20. bis 25. Juni 2023 eingeplant.</p>
+</Modal>
+<Modal showModal={showModalVisit}>
+  <h4>{$_('ministry.infostand')} noch in Planung</h4>
+	<p>Das Versammlungsdienstkomitee wählt geeignete getaufte Verkündiger aus.</p>
+</Modal>
 
 <footer>
+  <a href="#top" title="Home">Home</a>
 </footer>

@@ -49,11 +49,16 @@
     },
     "organisation": {
       "cleaning": {
-        "title": "Reinigung des Königreichssaals in Bad Arolsen"
+        "title": "Reinigung des Königreichssaals in Bad Arolsen",
+        "encouragement": "Wir alle wollen gerne unseren Teil zur Reinigung des Königreichssaals tun. Das trägt zu einem angenehmen Haus der Anbetung bei und macht uns als ein reines Volk kenntlich, das Jehova Gott ehrt (1. Petrus 1:16)."
       }
     },
     "ministry": {
-      "pioneer-announcment": "Verkündiger, die im {month} als Hilfspionier dienen möchten, können sich zwischen einem Stundenerfordernis von 15 oder 30 Stunden entscheiden."
+      "pioneer-announcment": "Verkündiger, die im {month} als Hilfspionier dienen möchten, können sich zwischen einem Stundenerfordernis von 15 oder 30 Stunden entscheiden.",
+      "schedule": "Treffpunkte",
+      "trolley": "Trolley und Fernfaherdienst",
+      "infostand": "Infostand",
+      "co-visit": "Besuchswoche"
     }
 
 }

@@ -51,3 +51,7 @@
 <Modal showModal={showModalMinistryGroups}>
 	<p>Die Einteilung der Predigtdienstgruppen hängt an der Bekanntmachungstafel im Königreichsaal aus.</p>
 </Modal>
+
+<footer>
+  <a href="#top" title="Home">Home</a>
+</footer>

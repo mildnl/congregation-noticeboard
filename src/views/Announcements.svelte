@@ -48,4 +48,6 @@ footer a {
   <AnnouncementItem announcmentData={item} />
 {/each}
 
-<footer/>
+<footer>
+  <a href="#top" title="Home">Home</a>
+</footer>

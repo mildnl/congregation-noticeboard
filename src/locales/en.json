@@ -49,10 +49,15 @@
     },
     "organisation": {
       "cleaning": {
-        "title": "Cleaning of the Kingdomhall in Bad Arolsen"
+        "title": "Cleaning of the Kingdomhall in Bad Arolsen",
+        "encouragement": "We all want to contribute to the cleaning of the Kingdom Hall. This contributes to a pleasant House of Worship and makes us known as a pure people who honor Jehovah God (1 Peter 1:16)."
       }
     },
     "ministry": {
-      "pioneer-announcment": "Publishers who wish to serve as auxiliary pioneers in {month} can choose between a requirement of 15 or 30 hours."
+      "pioneer-announcment": "Publishers who wish to serve as auxiliary pioneers in {month} can choose between a requirement of 15 or 30 hours.",
+      "schedule": "Ministry Meetings",
+      "trolley": "Trolley and Truck Witnessing",
+      "infostand": "Infostand",
+      "co-visit": "Week of CO Visit"
     }
 }
