@@ -41,7 +41,7 @@ footer a {
   margin-left: 5px;
 }
 </style>
-<div class="w3-center w3-padding">
+<div class="w3-center w3-padding  w3-panel w3-grey">
   <h1>{$_('menu.meetings')}</h1>
 </div>
 <div class="w3-row">

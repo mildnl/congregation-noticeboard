@@ -99,7 +99,7 @@ footer a {
 }
 </style>
 <div class="w3-container">
-  <h1  class="w3-center w3-padding">{$_('menu.radio')}</h1>
+  <h1  class="w3-center w3-padding w3-panel w3-blue">{$_('menu.radio')}</h1>
   <div>
     <h3>{$_('radio.title')}</h3>
     <p>{$_('radio.description').replace('{year}', currentYear)}</p>

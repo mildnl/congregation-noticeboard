@@ -46,12 +46,12 @@ function closeMenu() {
 <main>
   <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
     <button class="w3-bar-item w3-button w3-large" on:click={closeMenu}>Close &times;</button>
-    <a href="#top" class="w3-bar-item w3-button"  on:click={() => handleMenuItemSelected('menu.meetings')}  data-title='menu.meetings'>{$_('menu.meetings')}</a>
-    <a href="#top" class="w3-bar-item w3-button"  on:click={() => handleMenuItemSelected('menu.ministry')}  data-title='menu.ministry'>{$_('menu.ministry')}</a>
-    <a href="#top" class="w3-bar-item w3-button"  on:click={() => handleMenuItemSelected('menu.radio')}  data-title='menu.radio'>{$_('menu.radio')}</a>
-    <a href="#top" class="w3-bar-item w3-button"  on:click={() => handleMenuItemSelected('menu.announcements')}  data-title='menu.announcements'>{$_('menu.announcements')}</a>
-    <a href="#top" class="w3-bar-item w3-button"  on:click={() => handleMenuItemSelected('menu.organisation')}  data-title='menu.organisation'>{$_('menu.organisation.title')}</a>
-    <a href="#top" class="w3-bar-item w3-button"  on:click={() => handleMenuItemSelected('menu.conventions')}  data-title='menu.conventions'>{$_('menu.conventions')}</a> 
+    <a href="#top" class="w3-bar-item w3-button w3-hover-gray"  on:click={() => handleMenuItemSelected('menu.meetings')}  data-title='menu.meetings'>{$_('menu.meetings')}</a>
+    <a href="#top" class="w3-bar-item w3-button w3-hover-yellow"  on:click={() => handleMenuItemSelected('menu.ministry')}  data-title='menu.ministry'>{$_('menu.ministry')}</a>
+    <a href="#top" class="w3-bar-item w3-button w3-hover-blue"  on:click={() => handleMenuItemSelected('menu.radio')}  data-title='menu.radio'>{$_('menu.radio')}</a>
+    <a href="#top" class="w3-bar-item w3-button w3-hover-teal"  on:click={() => handleMenuItemSelected('menu.announcements')}  data-title='menu.announcements'>{$_('menu.announcements')}</a>
+    <a href="#top" class="w3-bar-item w3-button w3-hover-red"  on:click={() => handleMenuItemSelected('menu.organisation')}  data-title='menu.organisation'>{$_('menu.organisation.title')}</a>
+    <a href="#top" class="w3-bar-item w3-button w3-hover-black"  on:click={() => handleMenuItemSelected('menu.conventions')}  data-title='menu.conventions'>{$_('menu.conventions')}</a> 
   </div>
   <div  id="main">
     <div class="w3-container">

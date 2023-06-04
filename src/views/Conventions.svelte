@@ -21,4 +21,4 @@ footer a {
 }
 </style>
 
-<h1 class="w3-center w3-padding">{$_('menu.conventions')}</h1>
+<h1 class="w3-center w3-padding w3-panel w3-black">{$_('menu.conventions')}</h1>

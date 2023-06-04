@@ -42,7 +42,7 @@ footer a {
 }
 </style>
 
-<h1 class="w3-center w3-padding">{$_('menu.announcements')}</h1>
+<h1 class="w3-center w3-padding w3-panel w3-teal">{$_('menu.announcements')}</h1>
 
 {#each announcementItems as item}
   <AnnouncementItem announcmentData={item} />

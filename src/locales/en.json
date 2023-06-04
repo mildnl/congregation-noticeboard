@@ -49,7 +49,10 @@
     },
     "organisation": {
       "cleaning": {
-        "title": "Reinigung des Königreichssaals in Bad Arolsen"
+        "title": "Cleaning of the Kingdomhall in Bad Arolsen"
       }
+    },
+    "ministry": {
+      "pioneer-announcment": "Publishers who wish to serve as auxiliary pioneers in {month} can choose between a requirement of 15 or 30 hours."
     }
 }

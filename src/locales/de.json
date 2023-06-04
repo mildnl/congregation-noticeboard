@@ -46,6 +46,14 @@
       "date": "Datum",
       "time": "Uhrzeit",
       "topic": "Thema"
+    },
+    "organisation": {
+      "cleaning": {
+        "title": "Reinigung des Königreichssaals in Bad Arolsen"
+      }
+    },
+    "ministry": {
+      "pioneer-announcment": "Verkündiger, die im {month} als Hilfspionier dienen möchten, können sich zwischen einem Stundenerfordernis von 15 oder 30 Stunden entscheiden."
     }
 
 }
