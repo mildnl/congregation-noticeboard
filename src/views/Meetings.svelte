@@ -45,8 +45,9 @@ footer a {
   <h1>{$_('menu.meetings')}</h1>
 </div>
 <div class="w3-row">
-  <div class="w3-col w3-container"><MeetingProgramm meetingData={meetingData}/></div>
-  
+  <div class="w3-col w3-container">
+    <MeetingProgramm meetingData={meetingData}/>
+  </div>
 </div>
 
 <footer>

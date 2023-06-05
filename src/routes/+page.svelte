@@ -43,6 +43,12 @@ function closeMenu() {
 }
 </script>
 
+<style>
+  :global(body) {
+    background-color:whitesmoke;
+  }
+</style>
+
 <main>
   <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
     <button class="w3-bar-item w3-button w3-large" on:click={closeMenu}>Close &times;</button>
@@ -55,14 +61,18 @@ function closeMenu() {
   </div>
   <div  id="main">
     <div class="w3-container">
-      <header class="w3-container w3-padding">
-        <button id="openNav" class="w3-button w3-xlarge" on:click={openMenu}>&#9776;</button>
-        <h1 class="w3-center">{$_('header.title')}</h1>
-      </header>
-    <div class="w3-container">
-      {#if SelectedComponent}
-        <svelte:component this={SelectedComponent} />
-      {/if}
+      <div class="w3-row">
+        <div class="w3-col w3-container" style="width:10%">&nbsp;</div>
+        <div class="w3-col w3-container w3-white w3-padding-64" style="width:80%">
+          <header class="w3-container w3-padding">
+          <button id="openNav" class="w3-button w3-xlarge" on:click={openMenu}>&#9776;</button>
+          <h1 class="w3-center">{$_('header.title')}</h1>
+        </header>
+            {#if SelectedComponent}
+              <svelte:component this={SelectedComponent} />
+            {/if}
+        </div>
+        <div class="w3-col w3-container" style="width:10%">&nbsp;</div>
     </div>
   </div>
 </main>

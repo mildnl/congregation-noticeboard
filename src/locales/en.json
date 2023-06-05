@@ -40,17 +40,20 @@
     "final-comments": "Concluding Comments"
   },
     "conjunction": "and",
+    "date": "Date",
+    "time": "Time",
+    "topic": "Topic",
     "radio": {
       "title": "Radio Programm from Jehovahs Witnesses",
-      "description": "We would like to inform you about the broadcasting dates and topics of the radio programs for the year {year}.",
-      "date": "Date",
-      "time": "Time",
-      "topic": "Topic"
+      "description": "We would like to inform you about the broadcasting dates and topics of the radio programs for the year {year}."
     },
     "organisation": {
       "cleaning": {
         "title": "Cleaning of the Kingdomhall in Bad Arolsen",
-        "encouragement": "We all want to contribute to the cleaning of the Kingdom Hall. This contributes to a pleasant House of Worship and makes us known as a pure people who honor Jehovah God (1 Peter 1:16)."
+        "encouragement": "We all want to contribute to the cleaning of the Kingdom Hall. This contributes to a pleasant House of Worship and makes us known as a pure people who honor Jehovah God (1 Peter 1:16).",
+        "main-cleaning": "Main Cleaning",
+        "intermediate-cleaning": "Intermediate Cleaning",
+        "garden-maintainence": "Garden Maintenence"
       }
     },
     "ministry": {

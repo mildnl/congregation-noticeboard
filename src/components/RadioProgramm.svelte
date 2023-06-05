@@ -13,9 +13,9 @@
 <h2>{channelName}</h2>
 <table>
   <tbody>
-    <th>{$_('radio.date')}</th>
-    <th>{$_('radio.time')}</th>
-    <th>{$_('radio.topic')}</th>
+    <th>{$_('date')}</th>
+    <th>{$_('time')}</th>
+    <th>{$_('topic')}</th>
     {#each tableData as data }
     <tr>
       <td>

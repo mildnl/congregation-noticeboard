@@ -40,17 +40,20 @@
     "final-comments": "Schlussworte"
   },
     "conjunction": "und",
+    "date": "Datum",
+    "time": "Uhrzeit",
+    "topic": "Thema",
     "radio": {
       "title": "Radiosendungen von Jehovas Zeugen",
-      "description": "Gern möchten wir euch über die Sendetermine und Themen der Radiosendungen für das Jahr {year} informieren.",
-      "date": "Datum",
-      "time": "Uhrzeit",
-      "topic": "Thema"
+      "description": "Gern möchten wir euch über die Sendetermine und Themen der Radiosendungen für das Jahr {year} informieren."
     },
     "organisation": {
       "cleaning": {
         "title": "Reinigung des Königreichssaals in Bad Arolsen",
-        "encouragement": "Wir alle wollen gerne unseren Teil zur Reinigung des Königreichssaals tun. Das trägt zu einem angenehmen Haus der Anbetung bei und macht uns als ein reines Volk kenntlich, das Jehova Gott ehrt (1. Petrus 1:16)."
+        "encouragement": "Wir alle wollen gerne unseren Teil zur Reinigung des Königreichssaals tun. Das trägt zu einem angenehmen Haus der Anbetung bei und macht uns als ein reines Volk kenntlich, das Jehova Gott ehrt (1. Petrus 1:16).",
+        "main-cleaning": "Hauptreinigung",
+        "intermediate-cleaning": "Zwischenreinigung",
+        "garden-maintainence": "Gartenpflege"
       }
     },
     "ministry": {
