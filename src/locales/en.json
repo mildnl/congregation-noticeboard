@@ -43,6 +43,7 @@
     "date": "Date",
     "time": "Time",
     "topic": "Topic",
+    "location": "Location",
     "radio": {
       "title": "Radio Programm from Jehovahs Witnesses",
       "description": "We would like to inform you about the broadcasting dates and topics of the radio programs for the year {year}."
@@ -62,5 +63,9 @@
       "trolley": "Trolley and Truck Witnessing",
       "infostand": "Infostand",
       "co-visit": "Week of CO Visit"
+    },
+    "conventions": {
+      "announcment": "Announcements regarding upcoming Regional Conventions",
+      "invite": "Dear Brothers and Sisters,\n Your Congregation is invited to the following Conventions."
     }
 }

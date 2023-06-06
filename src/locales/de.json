@@ -43,6 +43,7 @@
     "date": "Datum",
     "time": "Uhrzeit",
     "topic": "Thema",
+    "location": "Ort",
     "radio": {
       "title": "Radiosendungen von Jehovas Zeugen",
       "description": "Gern möchten wir euch über die Sendetermine und Themen der Radiosendungen für das Jahr {year} informieren."
@@ -62,6 +63,12 @@
       "trolley": "Trolley und Fernfaherdienst",
       "infostand": "Infostand",
       "co-visit": "Besuchswoche"
+    },
+    "conventions": {
+      "announcment": "Mitteilung über die nächsten Kreiskongresse<",
+      "invite": "Liebe Brüder und Schwestern,\n eure Versammlung ist zum Besuch der nachfolgend aufgeführten Kreiskongresse eingeladen.",
+      "host-co": "Mit dem Kreisaufseher",
+      "host-bethel": "Mit einem Vertreter des Zweigbüros"
     }
 
 }
