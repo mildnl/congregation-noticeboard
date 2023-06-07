@@ -8,6 +8,7 @@
   import Conventions from '../views/Conventions.svelte';
   import { onMount } from 'svelte';
   import '../styles/w3.css'
+	import Admin from '../views/Admin.svelte';
 
   const i18n = setupI18n();
 
@@ -25,7 +26,8 @@
         { id: 'menu.radio', component: Radio, },
         { id: 'menu.announcements', component: Announcements, },
         { id: 'menu.organisation', component: Organisation, },
-        { id: 'menu.conventions', component: Conventions, }
+        { id: 'menu.conventions', component: Conventions, },
+        { id: 'menu.login', component: Admin, }
     ];
   async function handleMenuItemSelected(item) {
       SelectedComponent = components.find(type => type.id == item).component;
@@ -58,6 +60,7 @@ function closeMenu() {
     <a href="#top" class="w3-bar-item w3-button w3-hover-teal"  on:click={() => handleMenuItemSelected('menu.announcements')}  data-title='menu.announcements'>{$_('menu.announcements')}</a>
     <a href="#top" class="w3-bar-item w3-button w3-hover-red"  on:click={() => handleMenuItemSelected('menu.organisation')}  data-title='menu.organisation'>{$_('menu.organisation.title')}</a>
     <a href="#top" class="w3-bar-item w3-button w3-hover-black"  on:click={() => handleMenuItemSelected('menu.conventions')}  data-title='menu.conventions'>{$_('menu.conventions')}</a> 
+    <a href="#top" class="w3-bar-item w3-button w3-hover-green"  on:click={() => handleMenuItemSelected('menu.login')}  data-title='menu.login'>Login</a> 
   </div>
   <div  id="main">
     <div class="w3-container">

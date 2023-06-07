@@ -1,6 +1,7 @@
 <script>
+    import { useForm, validators, HintGroup, Hint, email, required } from "svelte-use-form";
   import { _ } from '../services/i18n/i18n';
-  import MeetingProgramm from '../components/MeetingProgramm.svelte';
+  const form = useForm();
   let meetingData = {
     date: "29. Mai",
     readingProgramm: "2 Cronika 28-29",
@@ -29,37 +30,20 @@
         reader: "Rainer Blosat"
       }
     }
+}
+  function addMeetingProgramm(params) {
+    
   }
 </script>
-<style>
-  footer {
-  position:relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
 
-footer a {
-  color: #000;
-  margin-left: 5px;
-}
-</style>
-<div class="w3-center w3-padding  w3-panel w3-grey">
-  <h1>{$_('menu.meetings')}</h1>
-</div>
-<div class="w3-row">
-  <div class="w3-col w3-container">
-    <MeetingProgramm meetingData={meetingData}/>
-  </div>
-</div>
-
-<footer>
-  <a href="https://www.flaticon.com/de/kostenlose-icons/diamant" title="diamant Icons">Freepik - Diamant</a>
-  <a href="https://www.flaticon.com/de/kostenlose-icons/weizen" title="weizen Icons">Freepik - Wheat</a>
-  <a href="https://www.flaticon.com/de/kostenlose-icons/schaf" title="schaf Icons">Freepik - Sheep</a>
-</footer>
+    <form use:form class="w3-container">
+    
+        <label class="w3-text-green" for="president"><b>meeting.president</b></label>
+        <input class="w3-input w3-border" type="text" name="president">
+        
+        <label class="w3-text-green" for="tresures"><b>{$_('meeting.treasures.talk')}</b></label>
+        <input class="w3-input w3-border" type="text" name="treasures">
+    
+    <button class="w3-btn w3-green" disabled={!$form.valid} on:click={addMeetingProgramm}>Register</button>
+    
+</form>

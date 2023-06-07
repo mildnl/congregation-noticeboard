@@ -6,7 +6,6 @@
   let showModalInfoStand = false;
   let showModalVisit = false;
   let showModalTrolley = false;
-  let showModal = false;
   let SelectedComponent = MinistrySchedule;
 
   const components = [
