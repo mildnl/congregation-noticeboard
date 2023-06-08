@@ -35,7 +35,7 @@ footer a {
 <h1 class="w3-center w3-padding w3-panel w3-green">{$_('admin.title')}</h1>
 <div class="w3-padding">
   <div class="w3-bar w3-green w3-border">
-    <a href="#top" on:click={handleMenuItemSelected('admin.test')} class="w3-bar-item w3-button w3-hover-green" style="width:25%">{$_('ministry.schedule')}</a>
+    <a href="#top" on:click={handleMenuItemSelected('admin.test')} class="w3-bar-item w3-button w3-hover-green" style="width:25%">{$_('admin.test')}</a>
   </div>
 </div>
 <div class="w3-container">
@@ -47,5 +47,9 @@ footer a {
     {/if}
     <h1 class="w3-center">{isLoggedIn}</h1>
 </div>
+
+<footer>
+  <a href="#top" title="Home">Home</a>
+</footer>
 
 

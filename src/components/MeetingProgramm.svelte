@@ -90,9 +90,9 @@ h4 {
         <div class="w3-container">
           <p class="meeting-song">{$_('meeting.song')} {meetingData.songs.middle}</p>
         <ul>
-          {#each meetingData.life.talk as part}
+          {#each meetingData.life.parts as part}
             <li>
-              <p>{part}</p> 
+              <p>{part.title} ({part.time} Min.) {part.assingee}</p> 
             </li>
           {/each}
           <li>

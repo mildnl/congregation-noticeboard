@@ -23,7 +23,20 @@
       talk: null
     },
     life: {
-      talk: ["Jehova ist der ‚Vater der Vaterlosen (8 Min.) Werner Kimm", "Aktuelles (7 Min.) Mayk Jäger"],
+      parts: [
+          {
+              title:"Jehova ist der ‚Vater der Vaterlosen", 
+              time:8,
+              assignee:"Werner Kimm"
+              
+          }, 
+          {
+              title:"Aktuelles", 
+              time: 7,
+              assignee:"Mayk Jäger"
+              
+          }
+          ],
       congregationBibleStudy: {
         assignee: "Mayk Jäger",
         reader: "Rainer Blosat"
