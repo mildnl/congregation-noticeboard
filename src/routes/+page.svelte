@@ -1,5 +1,5 @@
 <script>
-  import { Meetings } from "../views/Meetings.svelte";
+  import  Meetings from "../views/Meetings.svelte";
     import Menu from '../components/Menu.svelte'
     import { setupI18n } from '../services/i18n/i18n';
   import { onMount } from 'svelte';
