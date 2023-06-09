@@ -3,7 +3,7 @@ import adapter from '@sveltejs/adapter-static';
 export default {
     kit: {
         adapter: adapter({
-			fallback: 'index.js',
+			fallback: 'app.html',
 			prerender: true,
         })
     }
