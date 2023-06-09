@@ -1,13 +1,9 @@
 import adapter from '@sveltejs/adapter-static';
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
+export default {
     kit: {
-        adapter: adapter(),
-        prerender: {
-            default: true
-        }
+        adapter: adapter({
+            fallback: '200.html' 
+        })
     }
 };
-
-export default config;
