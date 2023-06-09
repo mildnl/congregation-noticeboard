@@ -1,10 +1,9 @@
 <script>
-  import { _, setupI18n } from '../../services/i18n/i18n';
-  import Menu from '../../components/Menu.svelte';
-  import MainView from '../../components/MainView.svelte';
-  import Meetings from '../../views/Meetings.svelte';
+  import { _, setupI18n } from '../../../services/i18n/i18n';
+  import Menu from '../../../components/Menu.svelte';
+  import Ministry from '../../../views/Ministry.svelte';
   import { onMount } from 'svelte';
-  import '../../styles/w3.css';
+  import '../../../styles/w3.css';
 
   let language = 'en'
   const i18n = setupI18n({ withLocale: language });
@@ -24,5 +23,5 @@
 
 <main>
   <Menu bind:language/>
-  <MainView SelectedComponent={Meetings}/>
+  <MainView SelectedComponent={Ministry}/>
 </main>

@@ -1,15 +1,16 @@
-import { init, getLocaleFromPathname,dictionary, locale, _ } from 'svelte-i18n';
+import { dictionary, locale, _, init, getLocaleFromPathname } from 'svelte-i18n';
+
 
  
 init({
   fallbackLocale: 'de',
-  initialLocale: getLocaleFromPathname(/^\/(.*?)\//),
+  initialLocale: getLocaleFromPathname(/^\/\w{2}\//),
 })
 
 const MESSAGE_FILE_URL_TEMPLATE = 'src/locales/{locale}.json';
-let cachedLocale = 'de';
-
-function setupI18n({ withLocale: _locale } = { withLocale: 'de' }) {
+let cachedLocale ='de';
+console.log(cachedLocale)
+function setupI18n({ withLocale: _locale } = { withLocale: cachedLocale }) {
   const messagesFileUrl = MESSAGE_FILE_URL_TEMPLATE.replace('{locale}', _locale);
 
   return {

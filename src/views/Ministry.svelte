@@ -6,25 +6,16 @@
   let showModalInfoStand = false;
   let showModalVisit = false;
   let showModalTrolley = false;
-  let SelectedComponent = MinistrySchedule;
+  let showModal = false
 
-  const components = [
-        { id: 'ministry.schedule', component: MinistrySchedule, },
-        { id: 'ministry.trolley', component: MinistrySchedule, },
-        { id: 'ministry.infostand', component: Modal, },
-        { id: 'ministry.co-visit', component: Modal, }
-    ];
-  async function handleMenuItemSelected(item) {
-      SelectedComponent = components.find(type => type.id == item).component;
-  }
   function toggleModalInfoStand(modalBool) {
-    showModalInfoStand = !modalBool
+    showModalInfoStand = !showModalInfoStand
   }
   function toggleModalVisit(modalBool) {
-    showModalVisit = !modalBool
+    showModalVisit = !showModalVisit
   }
   function toggleModalTrolley(modalBool) {
-    showModalTrolley = !modalBool
+    showModalTrolley = !showModalTrolley
   }
 </script>
 <style>
@@ -50,17 +41,14 @@ footer a {
 <h1 class="w3-center w3-padding w3-panel w3-yellow">{$_('menu.ministry')}</h1>
 <div class="w3-padding">
   <div class="w3-bar w3-white w3-border">
-    <a href="#top" on:click={handleMenuItemSelected('ministry.schedule')} class="w3-bar-item w3-button w3-hover-yellow" style="width:25%">{$_('ministry.schedule')}</a>
-    <a href="#top" on:click={toggleModalTrolley(showModalTrolley)} class="w3-bar-item w3-button w3-hover-yellow" style="width:25%">{$_('ministry.trolley')}</a>
-    <a href="#top" on:click={toggleModalInfoStand(showModalInfoStand)} class="w3-bar-item w3-button w3-hover-yellow" style="width:25%">{$_('ministry.infostand')}</a>
-    <a href="#top" on:click={toggleModalVisit(showModalVisit)} class="w3-bar-item w3-button w3-hover-yellow" style="width:25%">{$_('ministry.co-visit')}</a>
+    <p on:click={toggleModalTrolley(showModalTrolley)} class="w3-bar-item w3-button w3-hover-yellow" style="width:33%">{$_('ministry.trolley')}</p>
+    <p on:click={toggleModalInfoStand(showModalInfoStand)} class="w3-bar-item w3-button w3-hover-yellow" style="width:33%">{$_('ministry.infostand')}</p>
+    <p on:click={toggleModalVisit(showModalVisit)} class="w3-bar-item w3-button w3-hover-yellow" style="width:33%">{$_('ministry.co-visit')}</p>
   </div>
 </div>
 <div class="w3-container">
   <div class="w3-container">
-      {#if SelectedComponent}
-        <svelte:component this={SelectedComponent} />
-      {/if}
+      <MinistrySchedule />
     </div>
 </div>
 <Modal showModal={showModalInfoStand}>

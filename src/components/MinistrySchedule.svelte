@@ -3,10 +3,10 @@
     import TimeGrid from '@event-calendar/time-grid';
     import DayGridMonth from '@event-calendar/day-grid';
     import ListGrid from '@event-calendar/list';
-    import {_} from '../services/i18n/i18n';
+    import {_, locale} from '../services/i18n/i18n';
 
     const currentDate = new Date();
-    const currentMonth = currentDate.toLocaleString(navigator.language, { month: 'long' });
+    const currentMonth = currentDate.toLocaleString(locale, { month: 'long' });
 
     function generateEvent(title, startDate, endDate, time) {
         const startTime = new Date(startDate);
