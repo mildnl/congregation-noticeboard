@@ -4,8 +4,18 @@ export default {
     kit: {
         adapter: adapter({
 			fallback: 'index.html',
-			prerender: true,
+            hydrate: false,
+            pages: 'build',
+            assets: 'build',
+			prerender: {
+                concurrency: 1,
+                crawl: true,
+                entries: 'pages'
+        }
         })
+    },
+    files: {
+      assets: 'src/locales',
     },
     module: {
         rules: {

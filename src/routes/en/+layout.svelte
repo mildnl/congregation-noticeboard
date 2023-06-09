@@ -1,11 +1,10 @@
 <script>
-  import { Meetings } from "../views/Meetings.svelte";
-    import Menu from '../components/Menu.svelte'
-    import { setupI18n } from '../services/i18n/i18n';
+    import Menu from '../../components/Menu.svelte'
+    import { setupI18n } from '../../services/i18n/i18n';
   import { onMount } from 'svelte';
-  import '../styles/w3.css';
+  import '../../styles/w3.css';
 
-  let language = 'de'
+  let language = 'en'
   const i18n = setupI18n({ withLocale: language });
   
  onMount(() => {
@@ -27,7 +26,7 @@
           <div class="w3-row">
             <div class="w3-col w3-container" style="width:10%">&nbsp;</div>
             <div class="w3-col w3-container w3-white w3-padding-64" style="width:80%">
-               <Meetings />
+               <slot></slot>
             </div>
             <div class="w3-col w3-container" style="width:10%">&nbsp;</div>
         </div>

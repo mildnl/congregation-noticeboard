@@ -7,9 +7,9 @@ init({
   initialLocale: getLocaleFromPathname(/^\/\w{2}\//),
 })
 
-const MESSAGE_FILE_URL_TEMPLATE = 'src/locales/{locale}.json';
-let cachedLocale ='de';
-console.log(cachedLocale)
+const MESSAGE_FILE_URL_TEMPLATE = '/locales/{locale}.json';
+let cachedLocale = 'de';
+
 function setupI18n({ withLocale: _locale } = { withLocale: cachedLocale }) {
   const messagesFileUrl = MESSAGE_FILE_URL_TEMPLATE.replace('{locale}', _locale);
 

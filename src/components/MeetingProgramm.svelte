@@ -37,7 +37,7 @@ h4 {
 
       <div class="w3-card">
             <div class="w3-container meeting-part w3-padding">
-          <img class="w3-margin-right w3-padding" src="src/images/diamond.jpg" alt="gems"/>
+          <img class="w3-margin-right w3-padding" src="/images/diamond.jpg" alt="gems"/>
           <h3 class="gems">{$_('meeting.treasures.title')}</h3>
       </div>
       <ul>
@@ -53,7 +53,7 @@ h4 {
       </ul>
           <div class="w3-card">
       <div class="w3-container meeting-part w3-padding">
-        <img class="w3-margin-right w3-padding" src="src/images/weizen.png" alt="ministry"/>
+        <img class="w3-margin-right w3-padding" src="/images/weizen.png" alt="ministry"/>
         <h3 class="gems">{$_('meeting.ministry.title')}</h3>
       </div>
       <ul>
@@ -84,7 +84,7 @@ h4 {
       </ul>
         <div class="w3-card">
         <div class="w3-container meeting-part w3-padding">
-         <img class="w3-margin-right w3-padding" src="src/images/schaf.png" alt="ministry"/>
+         <img class="w3-margin-right w3-padding" src="/images/schaf.png" alt="ministry"/>
          <h3 class="gems">{$_('meeting.life.title')}</h3>
         </div>
         <div class="w3-container">
