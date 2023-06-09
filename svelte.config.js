@@ -6,5 +6,11 @@ export default {
 			fallback: 'index.html',
 			prerender: true,
         })
+    },
+    module: {
+        rules: {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: ['file-loader']
+        }
     }
 };

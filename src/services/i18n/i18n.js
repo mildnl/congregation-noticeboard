@@ -1,10 +1,9 @@
-import { dictionary, locale, _ } from 'svelte-i18n';
-import { init, getLocaleFromNavigator } from 'svelte-i18n'
+import { init, getLocaleFromPathname,dictionary, locale, _ } from 'svelte-i18n';
 
  
 init({
   fallbackLocale: 'de',
-  initialLocale: getLocaleFromNavigator(),
+  initialLocale: getLocaleFromPathname(/^\/(.*?)\//),
 })
 
 const MESSAGE_FILE_URL_TEMPLATE = 'src/locales/{locale}.json';
