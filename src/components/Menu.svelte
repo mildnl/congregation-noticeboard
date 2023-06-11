@@ -1,11 +1,11 @@
 <script>
-    import { _ } from '../services/i18n/i18n';
-    export const language = 'de'
-    function openMenu() {
-document.getElementById("main").style.marginLeft = "25%";
-document.getElementById("mySidebar").style.width = "25%";
-document.getElementById("mySidebar").style.display = "block";
-document.getElementById("openNav").style.display = 'none';
+import { _ } from 'svelte-i18n';
+export const language = 'de'
+function openMenu() {
+    document.getElementById("main").style.marginLeft = "25%";
+    document.getElementById("mySidebar").style.width = "25%";
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("openNav").style.display = 'none';
 }
 function closeMenu() {
   document.getElementById("main").style.marginLeft = "0%";

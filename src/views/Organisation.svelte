@@ -1,7 +1,7 @@
 <script>
   import CleaningSchedule from '../components/CleaningSchedule.svelte'
   import Modal from '../components/Modal.svelte';
-  import { _ } from '../services/i18n/i18n';
+import { _ } from 'svelte-i18n';
 
 
   let showModalOrgPlan = false;
