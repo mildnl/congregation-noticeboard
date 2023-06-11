@@ -2,12 +2,12 @@
 import  Meetings from "../views/Meetings.svelte";
 import '../styles/w3.css';
 import Menu from '../components/Menu.svelte'
-import locale from '../services/i18n/i18n'
+import setupI18n from '../services/i18n/i18n'
 import { waitLocale } from 'svelte-i18n'
-let language;
+let i18n = setupI18n('de');
+let language = 'de';
 export async function preload() {
-  language= locale;
-  return waitLocale();
+  return waitLocale('de');
 }
 </script>
 

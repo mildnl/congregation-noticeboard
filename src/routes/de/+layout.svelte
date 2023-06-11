@@ -1,7 +1,6 @@
 <script>
-import Menu from '../../../components/Menu.svelte'
-import { init } from '../../services/i18n/i18n'
-import locale from '../services/i18n/i18n'
+import Menu from '../../components/Menu.svelte'
+import locale from '../../services/i18n/i18n'
 import { waitLocale } from 'svelte-i18n'
 let language;
 export async function preload() {
