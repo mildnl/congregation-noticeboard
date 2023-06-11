@@ -1,6 +1,7 @@
 <script>
     import { useForm, validators, HintGroup, Hint, email, required } from "svelte-use-form";
-    import { _ } from '../services/i18n/i18n';
+
+import { _ } from 'svelte-i18n';
   const form = useForm();
   let meetingData = {
     date: "29. Mai",

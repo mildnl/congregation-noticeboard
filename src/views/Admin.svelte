@@ -1,7 +1,7 @@
 <script>
 	import AddMeetingProgramm from "../components/AddMeetingProgramm.svelte";
 	import Login from "../components/Login.svelte";
-    import { _ } from '../services/i18n/i18n';
+import { _ } from 'svelte-i18n';
     let isLoggedIn = false
     let SelectedComponent = Login;
     const components = [

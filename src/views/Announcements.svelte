@@ -1,6 +1,7 @@
 <script>
   import AnnouncementItem from '../components/AnnouncementItem.svelte';
-import { _ } from '../services/i18n/i18n';
+
+import { _ } from 'svelte-i18n';
 let announcementItems = [
   {
     date: "Mai 2023",

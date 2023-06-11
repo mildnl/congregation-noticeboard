@@ -1,5 +1,5 @@
 <script>
-  import { _ } from '../services/i18n/i18n';
+import { _ } from 'svelte-i18n';
   import MeetingProgramm from '../components/MeetingProgramm.svelte';
   let meetingData = {
     date: "29. Mai",

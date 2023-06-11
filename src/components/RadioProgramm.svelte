@@ -1,5 +1,5 @@
 <script>
-    import { _ } from '../services/i18n/i18n';
+import { _ } from 'svelte-i18n';
     export let tableData = [
         {
             date: "01.01.2000",
