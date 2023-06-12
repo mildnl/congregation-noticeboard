@@ -99,7 +99,7 @@ footer a {
 }
 </style>
 <div class="w3-container">
-  <h1  class="w3-center w3-padding w3-panel w3-blue">{$_('menu.radio')}</h1>
+  <h1 class="w3-center w3-padding w3-panel w3-blue">{$_('menu.radio')}</h1>
   <div>
     <h3>{$_('radio.title')}</h3>
     <p>{$_('radio.description').replace('{year}', currentYear)}</p>
@@ -110,9 +110,9 @@ footer a {
   {/each}
 </div>
 
-
-<footer>
-  <a href="https://www.br.de/radio/live/bayern2/">BR2 Livestream</a>
-  <a href="https://www.ndr.de/nachrichten/info/programm/livestream150.html">NDR Info Livestream</a>
-  <a href="https://jwconf.org/sendungen">Archiv</a>
+<footer class="w3-container w3-padding">
+  <a href="https://www.br.de/radio/live/bayern2/" class="w3-button">BR2 Livestream</a>
+  <a href="https://www.ndr.de/nachrichten/info/programm/livestream150.html" class="w3-button">NDR Info Livestream</a>
+  <a href="https://jwconf.org/sendungen" class="w3-button">Archiv</a>
 </footer>
+

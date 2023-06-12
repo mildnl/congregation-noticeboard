@@ -41,15 +41,14 @@ footer a {
   <h4 class="w3-center">{$_('conventions.announcment')}</h4>
 
   <div class="w3-row">
-      {#each conventionInvites as invite}
-      <div class="w3-col s6">
-        <ConventionCard conventionData={invite}/>
-      </div>
-      {/each}
+    {#each conventionInvites as invite}
+    <div class="w3-col s12 m6">
+      <ConventionCard conventionData={invite}/>
+    </div>
+    {/each}
   </div>
 </div>
 
-
-<footer>
+<footer class="w3-container w3-center w3-padding">
   <a href="/" title="Home">Home</a>
 </footer>

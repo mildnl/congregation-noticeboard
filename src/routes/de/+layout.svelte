@@ -19,11 +19,11 @@ export async function preload() {
   <div id="main" class="w3-container">
     <div class="w3-container w3-white w3-padding-16">
       <div class="w3-row">
-        <div class="w3-col s1">&nbsp;</div>
-        <div class="w3-col s10">
+        <div class="w3-col m1 l1 w3-hide-small">&nbsp;</div>
+        <div class="w3-col s12 m10 l10">
           <slot></slot>
         </div>
-        <div class="w3-col s1">&nbsp;</div>
+        <div class="w3-col m1 l1 w3-hide-small">&nbsp;</div>
       </div>
     </div>
   </div>

@@ -62,16 +62,16 @@ footer a {
   margin-left: 5px;
 }
 </style>
-<div class="w3-center w3-padding  w3-panel w3-grey">
-  <h1>{$_('menu.meetings')}</h1>
+<div class="w3-container w3-padding w3-panel w3-grey">
+  <h1 class="w3-center">{$_('menu.meetings')}</h1>
 </div>
 <div class="w3-row">
-  <div class="w3-col w3-container">
+  <div class="w3-col s12">
     <MeetingProgramm meetingData={meetingData}/>
   </div>
 </div>
 
-<footer>
+<footer class="w3-container w3-center w3-padding">
   <a href="https://www.flaticon.com/de/kostenlose-icons/diamant" title="diamant Icons">Freepik - Diamant</a>
   <a href="https://www.flaticon.com/de/kostenlose-icons/weizen" title="weizen Icons">Freepik - Wheat</a>
   <a href="https://www.flaticon.com/de/kostenlose-icons/schaf" title="schaf Icons">Freepik - Sheep</a>

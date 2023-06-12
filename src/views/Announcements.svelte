@@ -43,12 +43,13 @@ footer a {
 }
 </style>
 
-<h1 class="w3-center w3-padding w3-panel w3-teal">{$_('menu.announcements')}</h1>
+<div class="w3-container">
+  <h1 class="w3-center w3-padding w3-panel w3-teal">{$_('menu.announcements')}</h1>
+  {#each announcementItems as item}
+    <AnnouncementItem announcmentData={item} />
+  {/each}
+</div>
 
-{#each announcementItems as item}
-  <AnnouncementItem announcmentData={item} />
-{/each}
-
-<footer>
+<footer class="w3-container w3-center w3-padding">
   <a href="/" title="Home">Home</a>
 </footer>

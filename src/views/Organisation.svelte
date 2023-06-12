@@ -33,24 +33,26 @@ import { _ } from 'svelte-i18n';
   }
 </style>
 
-<h1 class="w3-center w3-padding w3-panel w3-red">{$_('menu.organisation.title')}</h1>
+<div class="w3-container">
+  <h1 class="w3-center w3-padding w3-panel w3-red">{$_('menu.organisation.title')}</h1>
+</div>
 
 <div class="w3-bar w3-dark-grey">
-  <p on:click={() => (showModalOrgPlan = true)} class="w3-bar-item w3-button " style="width:50%">{$_('menu.organisation.ministry-groups')}</p>
-  <p on:click={() => (showModalMinistryGroups = true)} class="w3-bar-item w3-button " style="width:50%">{$_('menu.organisation.organisation-plan')}</p>
+  <p on:click={() => (showModalOrgPlan = true)} class="w3-bar-item w3-button" style="width:50%">{$_('menu.organisation.ministry-groups')}</p>
+  <p on:click={() => (showModalMinistryGroups = true)} class="w3-bar-item w3-button" style="width:50%">{$_('menu.organisation.organisation-plan')}</p>
 </div>
 
 <div>
-    <svelte:component this={CleaningSchedule} />
+  <svelte:component this={CleaningSchedule} />
 </div>
 
 <Modal showModal={showModalOrgPlan}>
-	<p>Der Organisationsplan der Versammlung hängt an der Bekanntmachungstafel im Königreichsaal aus.</p>
+  <p>Der Organisationsplan der Versammlung hängt an der Bekanntmachungstafel im Königreichsaal aus.</p>
 </Modal>
 <Modal showModal={showModalMinistryGroups}>
-	<p>Die Einteilung der Predigtdienstgruppen hängt an der Bekanntmachungstafel im Königreichsaal aus.</p>
+  <p>Die Einteilung der Predigtdienstgruppen hängt an der Bekanntmachungstafel im Königreichsaal aus.</p>
 </Modal>
 
-<footer>
+<footer class="w3-container w3-center w3-padding">
   <a href="/" title="Home">Home</a>
 </footer>

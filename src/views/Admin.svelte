@@ -32,19 +32,22 @@ footer a {
 }
 </style>
 
-<h1 class="w3-center w3-padding w3-panel w3-green">{$_('admin.title')}</h1>
 <div class="w3-container">
+  <h1 class="w3-center w3-padding w3-panel w3-green">{$_('admin.title')}</h1>
+  <div class="w3-container">
     {#if SelectedComponent && isLoggedIn}
       <svelte:component this={SelectedComponent}/>
     {/if}
     {#if isLoggedIn == false}
-        <Login bind:isLoggedIn />
+      <Login bind:isLoggedIn />
     {/if}
     <h1 class="w3-center">{isLoggedIn}</h1>
+  </div>
 </div>
 
-<footer>
+<footer class="w3-container w3-center w3-padding">
   <a href="/" title="Home">Home</a>
 </footer>
+
 
 
