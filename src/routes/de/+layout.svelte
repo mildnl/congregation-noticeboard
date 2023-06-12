@@ -15,16 +15,16 @@ export async function preload() {
   }
 </style>
 <main>
-    <Menu bind:language/>
-    <div  id="main">
-        <div class="w3-container">
-          <div class="w3-row">
-            <div class="w3-col w3-container" style="width:10%">&nbsp;</div>
-            <div class="w3-col w3-container w3-white w3-padding-64" style="width:80%">
-               <slot></slot>
-            </div>
-            <div class="w3-col w3-container" style="width:10%">&nbsp;</div>
+  <Menu bind:language/>
+  <div id="main" class="w3-container">
+    <div class="w3-container w3-white w3-padding-16">
+      <div class="w3-row">
+        <div class="w3-col s1">&nbsp;</div>
+        <div class="w3-col s10">
+          <slot></slot>
         </div>
+        <div class="w3-col s1">&nbsp;</div>
       </div>
     </div>
+  </div>
 </main>

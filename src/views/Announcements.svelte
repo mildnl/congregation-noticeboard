@@ -50,5 +50,5 @@ footer a {
 {/each}
 
 <footer>
-  <a href="#top" title="Home">Home</a>
+  <a href="/" title="Home">Home</a>
 </footer>

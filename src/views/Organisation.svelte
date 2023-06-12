@@ -36,9 +36,8 @@ import { _ } from 'svelte-i18n';
 <h1 class="w3-center w3-padding w3-panel w3-red">{$_('menu.organisation.title')}</h1>
 
 <div class="w3-bar w3-dark-grey">
-  <a href="#top" class="w3-bar-item w3-button " style="width:33%">{$_('menu.organisation.cleaning')}</a>
-  <a href="#top" on:click={() => (showModalOrgPlan = true)} class="w3-bar-item w3-button " style="width:33%">{$_('menu.organisation.ministry-groups')}</a>
-  <a href="#top" on:click={() => (showModalMinistryGroups = true)} class="w3-bar-item w3-button " style="width:33%">{$_('menu.organisation.organisation-plan')}</a>
+  <p on:click={() => (showModalOrgPlan = true)} class="w3-bar-item w3-button " style="width:50%">{$_('menu.organisation.ministry-groups')}</p>
+  <p on:click={() => (showModalMinistryGroups = true)} class="w3-bar-item w3-button " style="width:50%">{$_('menu.organisation.organisation-plan')}</p>
 </div>
 
 <div>
@@ -53,5 +52,5 @@ import { _ } from 'svelte-i18n';
 </Modal>
 
 <footer>
-  <a href="#top" title="Home">Home</a>
+  <a href="/" title="Home">Home</a>
 </footer>
