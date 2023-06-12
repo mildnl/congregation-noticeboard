@@ -5,18 +5,12 @@ export default {
         adapter: adapter({
 			fallback: 'index.html',
             hydrate: false,
-            pages: 'build',
-            assets: 'build',
 			prerender: {
                 concurrency: 1,
-                crawl: true,
-                entries: 'pages'
+                crawl: true
         }
         })
-    },
-    files: {
-      assets: 'src/locales',
-    },
+    }, 
     module: {
         rules: {
             test: /\.(png|svg|jpg|gif)$/,
