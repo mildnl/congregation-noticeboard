@@ -83,7 +83,10 @@ import { _, locale } from 'svelte-i18n';
 </script>
 <div class="w3-container">
     <div class="w3-panel">
-        <h3 class="w3-center">{$_('ministry.pioneer-announcment').replace('{month}', currentMonth)}</h3>
+        <h3 class="w3-center">{$_('ministry.pioneer-announcement').replace('{month}', currentMonth)}</h3>
     </div>
-    <Calendar {plugins} {options} />
+    <div class="w3-card w3-white w3-padding">
+        <Calendar {plugins} {options} />
+    </div>
 </div>
+
