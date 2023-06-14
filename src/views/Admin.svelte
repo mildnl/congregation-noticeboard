@@ -41,7 +41,6 @@ footer a {
     {#if isLoggedIn == false}
       <Login bind:isLoggedIn />
     {/if}
-    <h1 class="w3-center">{isLoggedIn}</h1>
   </div>
 </div>
 

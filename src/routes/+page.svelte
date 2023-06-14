@@ -1,14 +1,28 @@
 <script>
-import  Meetings from "../views/Meetings.svelte";
-import '../styles/w3.css';
-import Menu from '../components/Menu.svelte'
-import setupI18n from '../services/i18n/i18n'
-import { waitLocale } from 'svelte-i18n'
-let i18n = setupI18n('de');
-let language = 'de';
-export async function preload() {
-  return waitLocale('de');
-}
+  import { fade, scale } from "svelte/transition";
+  import { goto } from '$app/navigation';
+  import '../styles/w3.css';
+  import Menu from '../components/Menu.svelte'
+  import setupI18n from '../services/i18n/i18n'
+  import { waitLocale } from 'svelte-i18n'
+  import { onMount } from 'svelte';
+  let i18n = setupI18n('de');
+  let language = 'de';
+  export async function preload() {
+    return waitLocale('de');
+  }
+
+    let ready = false;
+  const redirectTime = 15000; // 15 seconds
+
+  onMount(() => {
+    const redirectTimer = setTimeout(() => {
+      goto('/de/Meetings');
+    }, redirectTime);
+    ready = true
+    // Clear the timer if the component is unmounted
+    return () => clearTimeout(redirectTimer);
+  });
 </script>
 
 <style>
@@ -39,12 +53,13 @@ footer a {
   <div id="main" class="w3-container">
     <div class="w3-container w3-white w3-padding-16">
       <div class="w3-row">
-        <div class="w3-col m1 l1 w3-hide-small">&nbsp;</div>
-        <div class="w3-col s12 m10 l10">
-          <Meetings />
-        </div>
-        <div class="w3-col m1 l1 w3-hide-small">&nbsp;</div>
-      </div>
+      {#if ready}
+       <div class="w3-center">
+         <h1 in:scale out:fade>Wilkommen</h1>
+         <h1>Redirecting in {redirectTime / 1000} seconds...</h1>
+         <p>Please wait.</p>
+       </div>
+      {/if}
     </div>
   </div>
 </main>

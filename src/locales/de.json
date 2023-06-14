@@ -10,7 +10,8 @@
       "ministry-groups": "Predigdienstgruppen",
       "organisation-plan": "Orgplan"
     },
-    "conventions": "Kongresse"
+    "conventions": "Kongresse",
+    "admin": "Admin"
   },
     "header": {
       "title":"Versammlung Bad Arolsen"
@@ -70,6 +71,9 @@
       "invite": "Liebe Brüder und Schwestern,\n eure Versammlung ist zum Besuch der nachfolgend aufgeführten Kreiskongresse eingeladen.",
       "host-co": "Mit dem Kreisaufseher",
       "host-bethel": "Mit einem Vertreter des Zweigbüros"
+    },
+    "admin": {
+      "title": "Einstellungen für Älteste"
     }
 
 }
