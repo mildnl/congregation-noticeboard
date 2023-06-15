@@ -49,7 +49,7 @@ footer a {
 }
 </style>
 <main>
-  <Menu bind:language/>
+  <Menu/>
   <div id="main" class="w3-container">
     <div class="w3-container w3-white w3-padding-16">
       <div class="w3-row">

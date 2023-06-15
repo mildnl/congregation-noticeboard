@@ -1,5 +1,7 @@
 <script>
   import Conventions from '../../../views/Conventions.svelte';
+    /** @type {import('./$types').PageData} */
+  export let data;
 </script>
 
-<Conventions />
+<Conventions conventionInvites={data.conventionInvites}/>

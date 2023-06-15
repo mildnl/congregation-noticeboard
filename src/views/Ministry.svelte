@@ -1,12 +1,11 @@
 <script>
   import MinistrySchedule from '../components/MinistrySchedule.svelte';
 	import Modal from '../components/Modal.svelte';
-import { _ } from 'svelte-i18n';
+  import { _ } from 'svelte-i18n';
 
   let showModalInfoStand = false;
   let showModalVisit = false;
   let showModalTrolley = false;
-  let showModal = false
 
   function toggleModalInfoStand(modalBool) {
     showModalInfoStand = !showModalInfoStand
@@ -43,8 +42,11 @@ footer a {
 </div>
 <div class="w3-padding">
   <div class="w3-bar w3-white w3-border">
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <p on:click={toggleModalTrolley(showModalTrolley)} class="w3-bar-item w3-button w3-hover-yellow" style="width:33%">{$_('ministry.trolley')}</p>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <p on:click={toggleModalInfoStand(showModalInfoStand)} class="w3-bar-item w3-button w3-hover-yellow" style="width:33%">{$_('ministry.infostand')}</p>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <p on:click={toggleModalVisit(showModalVisit)} class="w3-bar-item w3-button w3-hover-yellow" style="width:33%">{$_('ministry.co-visit')}</p>
   </div>
 </div>
@@ -54,14 +56,17 @@ footer a {
   </div>
 </div>
 <Modal showModal={showModalInfoStand}>
+  <!-- TODO add translation --> 
   <h4>{$_('ministry.infostand')} noch in Planung</h4>
   <p>Das Versammlungsdienstkomitee wählt geeignete getaufte Verkündiger aus.</p>
 </Modal>
 <Modal showModal={showModalVisit}>
+  <!-- TODO add translation --> 
   <h4>{$_('ministry.co-visit')}</h4>
   <p>Die nächste Besuchswoche ist vom <strong>20. bis 25. Juni 2023</strong> eingeplant.</p>
 </Modal>
 <Modal showModal={showModalTrolley}>
+  <!-- TODO add translation --> 
   <div class="w3-center">
     <a href="https://www.jwmanagement.org/de/signin" target='_blank' class="w3-button w3-yellow">Login JW Management</a>
   </div>

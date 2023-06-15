@@ -1,5 +1,7 @@
 <script>
   import Announcements from '../../../views/Announcements.svelte';
+    /** @type {import('./$types').PageData} */
+  export let data;
 </script>
 
-<Announcements />
+<Announcements announcementItems={data.announcementItems} />
