@@ -35,8 +35,13 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@auth/core": "^0.8.2",
+		"@auth/sveltekit": "^0.3.3",
 		"@aws-sdk/client-api-gateway": "^3.348.0",
+		"@rollup/plugin-replace": "^5.0.2",
 		"@sveltejs/adapter-static": "^2.0.2",
+		"amazon-cognito-identity-js": "^6.2.0",
+		"rollup-plugin-node-polyfills": "^0.2.1",
 		"svelte-i18n": "^3.6.0",
 		"svelte-kit-sst": "^2.12.0"
 	}

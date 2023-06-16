@@ -1,7 +1,9 @@
 <script>
+  import 'amazon-cognito-identity-js';
   import { fade, scale } from "svelte/transition";
   import { goto } from '$app/navigation';
   import '../styles/w3.css';
+  import {handleLogin, handleSuccessfulLogin} from '../services/login'
   import Menu from '../components/Menu.svelte'
   import setupI18n from '../services/i18n/i18n'
   import { waitLocale } from 'svelte-i18n'
@@ -13,16 +15,27 @@
   }
 
     let ready = false;
-  const redirectTime = 15000; // 15 seconds
+  //const redirectTime = 15000; // 15 seconds
+  let email = '';
+  let password = '';
 
   onMount(() => {
-    const redirectTimer = setTimeout(() => {
-      goto('/de/Meetings');
-    }, redirectTime);
-    ready = true
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/amazon-cognito-identity-js';
+    document.head.appendChild(script);
+    //const redirectTimer = setTimeout(() => {
+      //goto('/de/Meetings');
+    ///}, redirectTime);
+    //ready = true
+    
     // Clear the timer if the component is unmounted
-    return () => clearTimeout(redirectTimer);
-  });
+    //return () => clearTimeout(redirectTimer);
+    
+  })
+   
+   function login() {
+    handleLogin(email, password);
+  }
 </script>
 
 <style>
@@ -53,13 +66,24 @@ footer a {
   <div id="main" class="w3-container">
     <div class="w3-container w3-white w3-padding-16">
       <div class="w3-row">
-      {#if ready}
+
        <div class="w3-center">
          <h1 in:scale out:fade>Wilkommen</h1>
-         <h1>Redirecting in {redirectTime / 1000} seconds...</h1>
-         <p>Please wait.</p>
+        <h1>Login</h1>
+
+        <label>
+          Email:
+          <input type="email" bind:value="{email}" />
+        </label>
+
+        <label>
+          Password:
+          <input type="password" bind:value="{password}" />
+        </label>
+
+        <button on:click="{login}">Login</button>
        </div>
-      {/if}
+
     </div>
   </div>
 </main>
