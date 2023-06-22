@@ -13,7 +13,7 @@
   }
 
     let ready = false;
-  const redirectTime = 15000; // 15 seconds
+  const redirectTime = 1000; // 1 seconds
 
   onMount(() => {
     const redirectTimer = setTimeout(() => {
