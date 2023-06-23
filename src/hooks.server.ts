@@ -6,7 +6,7 @@
 import { SvelteKitAuth } from "@auth/sveltekit"
 import Credentials from "@auth/core/providers/credentials"
 // Import the Cognito service that we created earlier
-import { getSession, refreshAccessToken, type CognitoUserSessionType } from "$lib/domains/auth/services/Cognito"
+import { getSession, refreshAccessToken, type CognitoUserSessionType } from "$lib/services/auth/Cognito"
 // Type of the user object returned from the Cognito service
 import type AuthUser from "$lib/domains/auth/types/AuthUser";
 // Import the secret key from the environment variables
@@ -49,7 +49,6 @@ const createTokenFromUser = (user: AuthUser): AuthToken => {
       id: user.id,
       name: user.name,
       email: user.email,
-      image: user.image,
     },
   }
 }

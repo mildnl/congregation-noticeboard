@@ -1,5 +1,5 @@
 <script>
-  import Announcements from '../../../views/Announcements.svelte';
+  import Announcements from '$lib/views/Announcements.svelte';
     /** @type {import('./$types').PageData} */
   export let data;
 </script>

@@ -1,5 +1,5 @@
 <script>
-  import Conventions from '../../../views/Conventions.svelte';
+  import Conventions from '$lib/views/Conventions.svelte';
     /** @type {import('./$types').PageData} */
   export let data;
 </script>

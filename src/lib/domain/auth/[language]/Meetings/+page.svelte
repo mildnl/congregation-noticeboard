@@ -1,5 +1,5 @@
 <script>
-  import Meetings from '../../../views/Meetings.svelte';
+  import Meetings from '$lib/views/Meetings.svelte';
   /** @type {import('./$types').PageData} */
   export let data;
 </script>

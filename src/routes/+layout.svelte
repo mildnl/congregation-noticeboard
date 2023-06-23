@@ -1,8 +1,6 @@
-
 <script lang="ts">
   import { signOut } from "@auth/sveltekit/client"
   import { page } from "$app/stores"
-  export const prerender = true;
 </script>
 <div>
   <header>

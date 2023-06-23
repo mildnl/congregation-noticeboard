@@ -1,40 +1,26 @@
-<script>
-  import 'amazon-cognito-identity-js';
+<script lang="ts">
   import { fade, scale } from "svelte/transition";
-  import { goto } from '$app/navigation';
-  import '../styles/w3.css';
-  import {handleLogin, handleSuccessfulLogin} from '../services/login'
-  import Menu from '../components/Menu.svelte'
-  import setupI18n from '../services/i18n/i18n'
-  import { waitLocale } from 'svelte-i18n'
-  import { onMount } from 'svelte';
-  let i18n = setupI18n('de');
-  let language = 'de';
+  import Menu from '$lib/components/Menu.svelte';
+  import { waitLocale } from 'svelte-i18n';
+  import setupI18n from '$lib/services/i18n/i18n';
+  import { signIn } from "@auth/sveltekit/client"
+  import { invalidateAll } from '$app/navigation';
+
+  setupI18n('de');
   export async function preload() {
     return waitLocale('de');
-  }
-
-    let ready = false;
-  //const redirectTime = 15000; // 15 seconds
-  let email = '';
-  let password = '';
-
-  onMount(() => {
-    const script = document.createElement('script');
-    script.src = 'https://unpkg.com/amazon-cognito-identity-js';
-    document.head.appendChild(script);
-    //const redirectTimer = setTimeout(() => {
-      //goto('/de/Meetings');
-    ///}, redirectTime);
-    //ready = true
-    
-    // Clear the timer if the component is unmounted
-    //return () => clearTimeout(redirectTimer);
-    
-  })
+  } 
    
-   function login() {
-    handleLogin(email, password);
+  const handleSubmit = async (event: any) => {
+    const data = new FormData(event.target);
+    try {
+      await signIn('credentials', {
+        email: data.get('email'),
+        password: data.get('password')
+      });
+    } catch (error) {
+      await invalidateAll();
+    }
   }
 </script>
 
@@ -71,17 +57,13 @@ footer a {
          <h1 in:scale out:fade>Wilkommen</h1>
         <h1>Login</h1>
 
-        <label>
-          Email:
-          <input type="email" bind:value="{email}" />
-        </label>
-
-        <label>
-          Password:
-          <input type="password" bind:value="{password}" />
-        </label>
-
-        <button on:click="{login}">Login</button>
+        <div>
+          <form name="login" method="POST" on:submit|preventDefault={handleSubmit}>
+            <input name="email" type="email" placeholder="Email Address" />
+            <input name="password" placeholder="Password" type="password" />
+            <button>Sign In</button>
+          </form>
+        </div>
        </div>
 
     </div>

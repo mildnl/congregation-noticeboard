@@ -1,5 +1,5 @@
 <script>
-  import Radio from '../../../views/Radio.svelte';
+  import Radio from '$lib/views/Radio.svelte';
   /** @type {import('./$types').PageData} */
   export let data;
 </script>

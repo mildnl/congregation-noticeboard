@@ -1,8 +1,4 @@
 import { APIGatewayClient, CreateApiKeyCommand } from "@aws-sdk/client-api-gateway";
-import dotenv from 'dotenv';
-
-dotenv.config();
-
 
 async function makePostRequest(payload) {
 

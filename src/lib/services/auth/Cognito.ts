@@ -2,15 +2,15 @@
  * @file Cognito.ts
  * File containing the Cognito service
  */
-import dotenv from 'dotenv';
-
-dotenv.config();
-
+import { AWS_USER_POOL_ID, AWS_APP_CLIENT_ID } from "$env/static/private";
 import { AuthenticationDetails, CognitoRefreshToken, CognitoUser, CognitoUserPool, CognitoUserSession } from 'amazon-cognito-identity-js';
 export type CognitoUserSessionType = CognitoUserSession;
-const CONFIGS = {
-  UserPoolId: COGNITO_USER_POOL_ID,
-  ClientId: COGNITO_CLIENT_ID
+const CONFIGS: {
+  UserPoolId: string;
+  ClientId: string;
+} = {
+  UserPoolId: AWS_USER_POOL_ID || '',
+  ClientId: AWS_APP_CLIENT_ID || ''
 };
 // Create a new Cognito User Pool
 const Pool = new CognitoUserPool(CONFIGS);

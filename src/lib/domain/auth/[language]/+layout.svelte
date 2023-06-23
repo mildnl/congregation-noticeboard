@@ -1,9 +1,10 @@
 <script>
-import Menu from '../../components/Menu.svelte'
-import { waitLocale } from 'svelte-i18n'
-export async function preload() {
-  return waitLocale();
-}
+  import Menu from '$lib/components/Menu.svelte';
+  import { waitLocale } from 'svelte-i18n';
+  let language;
+  export async function preload() {
+    return waitLocale(language);
+  }
 </script>
 
 <style>
