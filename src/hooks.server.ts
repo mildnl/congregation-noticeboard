@@ -106,7 +106,7 @@ export const handle = SvelteKitAuth({
         })
         const user = extractUserFromSession(newUserSession);
         return createTokenFromUser(user);
-      } catch(error) {
+      } catch (error) {
         console.error(error);
         throw new Error('Invalid session');
       }
@@ -124,6 +124,26 @@ export const handle = SvelteKitAuth({
       session.accessToken = token.accessToken
       session.error = token.error
       return session;
+    },
+
+
+    async newPasswordRequired({ userAttributes, requiredAttributes }: any) {
+      // Implement the logic for handling the new password requirement here
+      // You can prompt the user to enter a new password or handle it in any other way
+      // Make sure to return a Promise that resolves with the new password
+
+      return new Promise((resolve, reject) => {
+        // Example: Prompt the user to enter a new password
+        const newPassword = prompt("Please enter a new password");
+        
+        if (newPassword) {
+          // Resolve the Promise with the new password
+          resolve(newPassword);
+        } else {
+          // Reject the Promise if the user does not enter a new password
+          reject(new Error("New password not provided"));
+        }
+      });
     },
   },
 });
