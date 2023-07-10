@@ -4,60 +4,29 @@
   import { waitLocale } from 'svelte-i18n';
   import setupI18n from '$lib/services/i18n/i18n';
   import { invalidateAll } from '$app/navigation';
+ import { signUp } from "$lib/services/auth/amplifyFunctions";
+	import type { CognitoUser } from "amazon-cognito-identity-js";
 
-  import { Auth } from 'aws-amplify';
+setupI18n('de');
+export async function preload() {
+  return waitLocale('de');
+}
 
-  type SignUpParameters = {
-    username: string;
-    password: string;
-    given_name: string;
-    family_name: string;
-    email: string;
-    phoneNumber: string;
-  };
-
-  async function signUp({ username, password, email, phoneNumber, given_name, family_name }: SignUpParameters) {
-    try {
-      const { user } = await Auth.signUp({
-        username,
-        password,
-        attributes: {
-          email,
-          phoneNumber, // optional - E.164 number convention
-          given_name,
-          family_name,
-        },
-        autoSignIn: {
-          // optional - enables auto sign in after user is confirmed
-          enabled: true,
-        },
-      });
-      console.log(user);
-    } catch (error) {
-      console.log('error signing up:', error);
-    }
+const handleSignUp = async (event: any) => {
+  const data = new FormData(event.target);
+  try {
+    await signUp({
+      username: data.get('username')?.toString() || 'user_test_1',
+      email: data.get('email')?.toString() || "mail2mildner@gmail.com",
+      password: data.get('password')?.toString() || "Pr0v3rbius27!!",
+      givenName: data.get('givenName')?.toString() || "Markus",
+      familyName: data.get('familyName')?.toString() || "Mildner",
+      phoneNumber: data.get('phoneNumber')?.toString() || "01627564911"
+    });
+  } catch (error) {
+    await invalidateAll();
   }
-
-  setupI18n('de');
-  export async function preload() {
-    return waitLocale('de');
-  }
-
-  const handleSignUp = async (event: any) => {
-    const data = new FormData(event.target);
-    try {
-      await signUp({
-        username: data.get('username'),
-        email: data.get('email'),
-        password: data.get('password'),
-        given_name: data.get('givenName'),
-        family_name: data.get('familyName'),
-        phoneNumber: data.get('phoneNumber')
-      });
-    } catch (error) {
-      await invalidateAll();
-    }
-  }
+}
 </script>
 
 <style>
@@ -94,12 +63,12 @@
           <h1>Login</h1>
 
           <div>
-            <form name="login" method="POST" on:submit|preventDefault={handleSignUp}>
-              <input name="username" placeholder="Username" />
+            <form name="signup" method="POST" on:submit|preventDefault={handleSignUp}>
+              <input name="username" type="text" placeholder="Username" />
               <input name="email" type="email" placeholder="Email Address" />
               <input name="password" placeholder="Password" type="password" />
-              <input name="givenName" placeholder="Given Name" />
-              <input name="familyName" placeholder="Family Name" />
+              <input name="givenName" type="text" placeholder="Given Name" />
+              <input name="familyName" type="text" placeholder="Family Name" />
               <input name="phoneNumber" type="tel" placeholder="Phone Number" />
               <button>Sign Up</button>
             </form>
