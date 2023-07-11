@@ -1,20 +1,18 @@
-<script>
-
+<script lang='ts'>
   import { invalidateAll } from '$app/navigation';
- import { signUp } from "$lib/services/auth/amplifyFunctions";
-	import { store } from "$lib/stores";
-    const handleSignUp = async (event: any) => {
+  import { signUp } from "$lib/services/auth/amplifyFunctions";
+  
+ const handleSignUp = async (event: any) => {
   const data = new FormData(event.target);
   try {
-    const user = await signUp({
-      username: data.get('username')?.toString() || "test",
-      email: data.get('email')?.toString() || "mail2mildner@gmail.com",
-      password: data.get('password')?.toString() || "Pr0v3rbius27!!",
-      given_name: data.get('givenName')?.toString() || "Markus",
-      family_name: data.get('familyName')?.toString() || "Mildner",
-      phone_number: data.get('phoneNumber')?.toString() || "+491627564911"
+    await signUp({
+      username: data.get('username')?.toString() || "",
+      email: data.get('email')?.toString() || "",
+      password: data.get('password')?.toString() || "",
+      given_name: data.get('givenName')?.toString() || "",
+      family_name: data.get('familyName')?.toString() || "",
+      phone_number: data.get('phoneNumber')?.toString() || ""
     });
-    store.set(user);
   } catch (error) {
     await invalidateAll();
   }

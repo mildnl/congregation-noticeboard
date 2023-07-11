@@ -1,19 +1,19 @@
-<script>
-	import { store } from '$lib/stores';
-  import { Auth } from 'aws-amplify';
-
-  let username = '';
-  let password = '';
-
-  const signIn = async () => {
-    try {
-      const user = await Auth.signIn(username, password);
-      // User successfully signed in
-      store.set(user)
-    } catch (error) {
-      console.log('Sign-in error:', error);
-    }
-  };
+<script lang='ts'>
+	import { signIn } from '$lib/services/auth/amplifyFunctions';
+  import { invalidateAll } from '$app/navigation';
+  
+ const handleSignIn = async (event: any) => {
+  const data = new FormData(event.target);
+  console.log(data)
+  try {
+    await signIn({
+      username: data.get('username')?.toString() || "",
+      password: data.get('password')?.toString() || "",
+    });
+  } catch (error) {
+    await invalidateAll();
+  }
+}
 </script>
 <div class="w3-card-2">
 
@@ -21,13 +21,13 @@
   <h2>Sign In</h2>
 </div>
 
-<form class="w3-container">
+<form class="w3-container" on:submit|preventDefault={handleSignIn}>
 
 <label for="username-input">Username</label>
-<input id="username-input" class="w3-input" type="text" bind:value={username}>
+<input id="username-input" class="w3-input" type="text" name="username">
 
 <label for="password-input">Password</label>
-<input id="password-input" class="w3-input" type="password" bind:value={password}>
-<button class="w3-button" on:click={signIn}>Sign In</button>
+<input id="password-input" class="w3-input" type="password" name="password">
+<button class="w3-button">Sign In</button>
 </form>
 </div>

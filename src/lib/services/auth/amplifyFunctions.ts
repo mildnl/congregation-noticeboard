@@ -1,9 +1,21 @@
  
+import type { CognitoUser } from 'amazon-cognito-identity-js';
 import { Auth } from 'aws-amplify';
 import { writable } from 'svelte/store';
 
-export const store = writable({});
-export const logout = () => store.set({});
+type DefaultData = {
+  user: CognitoUser | null,
+  userConfirmed: boolean,
+  userSub: string,
+};
+const defaultData: DefaultData = {
+    user: null,
+    userConfirmed: false,
+    userSub: '',
+};
+
+export const store = writable(defaultData);
+export const logout = () => store.set(defaultData);
   
  type SignUpParameters = {
     username: string;
@@ -28,7 +40,7 @@ export const logout = () => store.set({});
         autoSignIn: {
           enabled: false,
         },
-      }).then((data) => void store.set(data));;
+          }).then((data) => void store.set(data));
     } catch (error: unknown) {
     console.log('Error signing up:', error);
     }

@@ -1,5 +1,10 @@
 <script>
+// @ts-nocheck
+
   import { _ } from 'svelte-i18n';
+  /**
+	 * @type {number}
+	 */
   let screenSize;
   $: width = screenSize <= 768 ? 50 : 100;
   $: column = screenSize <= 768 ? 'w3-col': '';

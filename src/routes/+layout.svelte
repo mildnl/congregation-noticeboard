@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Menu from "$lib/components/Menu.svelte";
   import "../assets/styles/w3.css"
   import awsmobile from '../aws-exports';
 	import { Amplify } from "aws-amplify";
@@ -29,18 +28,7 @@
   }
 </style>
 
-<main>
-  <Menu />
-  <div id="main" class="w3-container">
-    <div class="w3-container w3-white w3-padding-16">
-      <div class="w3-row">
-        <div class="w3-center">
-          <slot />
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
+<slot />
 
 <footer class="w3-container w3-center w3-padding">
   <a href="https://www.flaticon.com/de/kostenlose-icons/diamant" title="diamant Icons">Diamant</a>
