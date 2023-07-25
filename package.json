@@ -16,7 +16,6 @@
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
-<<<<<<< HEAD
 		"@sveltejs/kit": "^1.20.4",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
@@ -30,46 +29,15 @@
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
 		"vite": "^4.3.6",
-=======
-		"@sveltejs/kit": "^1.5.0",
-		"autoprefixer": "^10.4.14",
-		"aws-sdk": "^2.1393.0",
-		"axios": "^1.4.0",
-		"dotenv": "^16.1.4",
-		"eslint": "^8.28.0",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-svelte": "^2.26.0",
-		"file-loader": "^6.2.0",
-		"flowbite-svelte": "^0.38.5",
-		"postcss": "^8.4.23",
-		"postcss-load-config": "^4.0.1",
-		"prettier": "^2.8.0",
-		"prettier-plugin-svelte": "^2.8.1",
-		"svelte": "^3.54.0",
-		"svelte-preprocess": "^5.0.3",
-		"svelte-use-form": "^2.6.2",
-		"tailwindcss": "^3.3.1",
-		"vite": "^4.3.0",
->>>>>>> master
 		"vitest": "^0.25.3"
 	},
 	"type": "module",
 	"dependencies": {
-<<<<<<< HEAD
 		"@auth/core": "^0.9.0",
 		"@auth/sveltekit": "^0.3.3",
 		"@sveltejs/adapter-static": "^2.0.2",
 		"amazon-cognito-identity-js": "^6.3.1",
 		"aws-amplify": "^5.3.3",
 		"svelte-i18n": "^3.6.0"
-=======
-		"@aws-sdk/client-api-gateway": "^3.348.0",
-		"@popperjs/core": "^2.11.8",
-		"@sveltejs/adapter-static": "^2.0.2",
-		"flowbite": "^1.6.6",
-		"svelte-i18n": "^3.6.0",
-		"svelte-kit-sst": "^2.12.0",
-		"tailwind-merge": "^1.13.2"
->>>>>>> master
 	}
 }

@@ -30,7 +30,6 @@
 
 <slot />
 
-
 <footer class="w3-container w3-center w3-padding">
   <a href="https://www.flaticon.com/de/kostenlose-icons/diamant" title="diamant Icons">Diamant</a>
   <a href="https://www.flaticon.com/de/kostenlose-icons/weizen" title="weizen Icons">Wheat</a>

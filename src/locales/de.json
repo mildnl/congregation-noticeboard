@@ -36,15 +36,6 @@
       "congregation-biblestudy": "Versammlungsbibelstudium",
       "reader": "Leser"
     },
-    "attendants": {
-      "audio": "Audio",
-      "video": "Video",
-      "zoom": "Zoom Ordner",
-      "security": "Saalordner und Eingangstür Ordner",
-      "hall-attendants": "Saalordner",
-      "microphones": "Mikrofondiener",
-      "podium": "Bühnenordner"
-    },
     "song": "Lied",
     "prayer": "Gebet",
     "initial-comments": "Einleitende Worte",
