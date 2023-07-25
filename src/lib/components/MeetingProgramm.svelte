@@ -1,7 +1,8 @@
 <script>
-
+import { Popover, Button } from 'flowbite-svelte'
 import { _ } from 'svelte-i18n';
-  export let meetingData
+  export let meetingData;
+  let placement;
 </script>
 
 <style>
@@ -31,6 +32,16 @@ h4 {
         <h4 class="w3-right w3-cell w3-margin-right">{meetingData.date}</h4>
         <h4 class="w3-left w3-cell">{meetingData.readingProgramm}</h4>
       </div>
+      <Button class="w3-right w3-cell w3-margin-right w3-button w3-border" id="placement-left" on:mouseenter={()=> placement="left"}>Technick/Audio</Button>
+        <Popover triggeredBy="[id^='placement-']" {placement} class="w3-right w3-cell w3-margin-right" title="Technick/Audio">
+              <p><b>{$_('meeting.attendants.audio')}</b>: {meetingData.attendants.audio}</p>
+              <p><b>{$_('meeting.attendants.video')}</b>: {meetingData.attendants.video}</p>
+              <p><b>{$_('meeting.attendants.zoom')}</b>: {meetingData.attendants.zoom}</p>
+              <p><b>{$_('meeting.attendants.security')}</b>: {meetingData.attendants.security}</p>
+              <p><b>{$_('meeting.attendants.hall-attendants')}</b>: {meetingData.attendants.hall}</p>
+              <p><b>{$_('meeting.attendants.microphones')}</b>: {meetingData.attendants.microphones}</p>
+              <p><b>{$_('meeting.attendants.podium')}</b>: {meetingData.attendants.podium}</p>
+        </Popover>
       <h4>{$_('meeting.president')}: {meetingData.president}</h4>
       <h4 class="meeting-song">{$_('meeting.song')} {meetingData.songs.initial} {$_('conjunction')} {$_('meeting.prayer')} : {meetingData.president}</h4>
       <h4 class="meeting-subtitle">{$_('meeting.initial-comments')} (1 Min.)</h4>

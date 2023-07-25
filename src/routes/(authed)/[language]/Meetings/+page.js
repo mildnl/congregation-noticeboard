@@ -22,6 +22,15 @@ export function load() {
                 bibleStudy: "Uwe Siefert / Cai Kewitz",
                 talk: null
             },
+            attendants: {
+                video: "Jörg Teztzlaf",
+                audio: "Markus Mildner",
+                zoom: "Reiner Blosat",
+                security: "Eckhard Heine, Gerhard Wagener",
+                hall: "Andreas Ende, Uwe Siefert",
+                microphones: "Cai Kewitz, Marius Schmidt",
+                podium: "Werner Kimm"
+            },
             life: {
                 parts: [
                     {

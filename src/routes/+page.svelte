@@ -1,18 +1,29 @@
 <script lang="ts">
   import { fade, scale } from "svelte/transition";
-  import { waitLocale } from 'svelte-i18n';
-  import setupI18n from '$lib/services/i18n/i18n';
-	import SignIn from "$lib/components/SignIn.svelte";
-	import Menu from "$lib/components/Menu.svelte";
-	import { store } from "$lib/services/auth/amplifyFunctions";
+  import { goto } from '$app/navigation';
+  import '../assets/styles/w3.css';
+  import Menu from '$lib/components/Menu.svelte'
+  import SignIn from "$lib/components/SignIn.svelte";
+  import setupI18n from '$lib/services/i18n/i18n'
+  import { waitLocale } from 'svelte-i18n'
+  import { onMount } from 'svelte';
+  let i18n = setupI18n('de');
+  let language = 'de';
+  export async function preload() {
+    return waitLocale('de');
+  }
 
-setupI18n('de');
-export async function preload() {
-  return waitLocale('de');
-}
+    let ready = false;
+  const redirectTime = 1000; // 1 seconds
 
-let user = $store.user
-store.subscribe(() => user = $store.user)
+  onMount(() => {
+    //const redirectTimer = setTimeout(() => {
+    //  goto('/de/Meetings');
+    //}, redirectTime);
+    //ready = true
+    // Clear the timer if the component is unmounted
+    //return () => clearTimeout(redirectTimer);
+  });
 </script>
 <main>
   <Menu />
@@ -21,12 +32,7 @@ store.subscribe(() => user = $store.user)
       <div class="w3-row">
         <div class="w3-center">
           <h1 in:scale out:fade>Wilkommen</h1>
-          <pre>{JSON.stringify($store,null,2)}</pre>
-          {#if user != null}
-		        <p>User</p>
-	        {:else}
 		        <SignIn />
-	        {/if}
         </div>
       </div>
     </div>

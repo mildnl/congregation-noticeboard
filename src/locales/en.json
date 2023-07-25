@@ -35,6 +35,15 @@
       "congregation-biblestudy": "Congregation Bible Study",
       "reader": "Reader"
     },
+    "attendants": {
+      "audio": "Audio",
+      "video": "Video",
+      "zoom": "Zoom Attendant",
+      "security": "Kingdomhall and Entry attendants",
+      "hall-attendants": "Hall attendants",
+      "microphones": "Microphone attendants",
+      "podium": "Podium Attendant"
+    },
     "song": "Song",
     "prayer": "Prayer",
     "initial-comments": "Initial Comments",
