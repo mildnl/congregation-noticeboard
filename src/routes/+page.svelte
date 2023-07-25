@@ -10,6 +10,9 @@ setupI18n('de');
 export async function preload() {
   return waitLocale('de');
 }
+
+let user = $store.user
+store.subscribe(() => user = $store.user)
 </script>
 <main>
   <Menu />
@@ -19,7 +22,7 @@ export async function preload() {
         <div class="w3-center">
           <h1 in:scale out:fade>Wilkommen</h1>
           <pre>{JSON.stringify($store,null,2)}</pre>
-          {#if $store.user != null}
+          {#if user != null}
 		        <p>User</p>
 	        {:else}
 		        <SignIn />

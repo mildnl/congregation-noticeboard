@@ -61,7 +61,7 @@ export async function resendConfirmationCode({ username }: ResendConfCodeParamet
 
  type SignInParameters = {
     username: string;
-    password: string;
+     password: string;
   };
 
 export async function signIn({ username, password }: SignInParameters ) {

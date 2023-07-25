@@ -38,7 +38,18 @@ const awsmobile = {
     "region": "eu-central-1",
     "userPoolId": "eu-central-1_PrMBMwjF2",
     "userPoolWebClientId": "70gdlhn6bi6fedflsr0o3f2g2a",
-    "identityPoolId": "eu-central-1:c368c0b4-fbed-49cd-9a9e-b1d678ab1de1"
+    "identityPoolId": "eu-central-1:c368c0b4-fbed-49cd-9a9e-b1d678ab1de1",
+     "cookieStorage": {
+      // REQUIRED - Cookie domain (only required if cookieStorage is provided)
+      "domain": '.markus-mildner.dev',
+      // OPTIONAL - Cookie path
+      "path": '/',
+      // OPTIONAL - Cookie expiration in days
+      "expires": 365,
+      // OPTIONAL - Cookie secure flag
+      // Either true or false, indicating if the cookie transmission requires a secure protocol (https).
+      "secure": false,
+    },
 };
 
 

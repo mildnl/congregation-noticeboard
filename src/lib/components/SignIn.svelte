@@ -4,13 +4,13 @@
   
  const handleSignIn = async (event: any) => {
   const data = new FormData(event.target);
-  console.log(data)
   try {
     await signIn({
       username: data.get('username')?.toString() || "",
       password: data.get('password')?.toString() || "",
     });
   } catch (error) {
+    console.log(error)
     await invalidateAll();
   }
 }
