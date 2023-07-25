@@ -3,7 +3,7 @@
     import TimeGrid from '@event-calendar/time-grid';
     import DayGridMonth from '@event-calendar/day-grid';
     import ListGrid from '@event-calendar/list';
-import { _, locale } from 'svelte-i18n';
+    import { _, locale } from 'svelte-i18n';
 
     const currentDate = new Date();
     const currentMonth = currentDate.toLocaleString(locale, { month: 'long' });

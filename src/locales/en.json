@@ -1,19 +1,19 @@
 {
   "menu": {
-        "meetings": "Congregation Meetings",
-        "ministry": "Ministry",
-        "radio": "Radio",
-        "announcements": "Announcements",
-        "organisation": {
-            "title": "Congregation Organization",
-            "cleaning": "Cleaning",
-            "ministry-groups": "Ministry Groups",
-            "organisation-plan": "Organisation Plan"
-          },
-        "conventions": "Conventions"
-      },
+    "meetings": "Congregation Meetings",
+    "ministry": "Ministry",
+    "radio": "Radio",
+    "announcements": "Announcements",
+    "organisation": {
+      "title": "Congregation Organization",
+      "cleaning": "Cleaning",
+      "ministry-groups": "Ministry Groups",
+      "organisation-plan": "Organisation Plan"
+    },
+    "conventions": "Conventions"
+  },
   "header": {
-    "title":"Congregation Bad Arolsen"
+    "title": "Congregation Bad Arolsen"
   },
   "meeting": {
     "president": "President",
@@ -35,38 +35,48 @@
       "congregation-biblestudy": "Congregation Bible Study",
       "reader": "Reader"
     },
+    "attendants": {
+      "audio": "Audio",
+      "video": "Video",
+      "zoom": "Zoom Attendant",
+      "security": "Kingdomhall and Entry attendants",
+      "hall-attendants": "Hall attendants",
+      "microphones": "Microphone attendants",
+      "podium": "Podium Attendant"
+    },
     "song": "Song",
     "prayer": "Prayer",
     "initial-comments": "Initial Comments",
     "final-comments": "Concluding Comments"
   },
-    "conjunction": "and",
-    "date": "Date",
-    "time": "Time",
-    "topic": "Topic",
-    "location": "Location",
-    "radio": {
-      "title": "Radio Programm from Jehovahs Witnesses",
-      "description": "We would like to inform you about the broadcasting dates and topics of the radio programs for the year {year}."
-    },
-    "organisation": {
-      "cleaning": {
-        "title": "Cleaning of the Kingdomhall in Bad Arolsen",
-        "encouragement": "We all want to contribute to the cleaning of the Kingdom Hall. This contributes to a pleasant House of Worship and makes us known as a pure people who honor Jehovah God (1 Peter 1:16).",
-        "main-cleaning": "Main Cleaning",
-        "intermediate-cleaning": "Intermediate Cleaning",
-        "garden-maintainence": "Garden Maintenence"
-      }
-    },
-    "ministry": {
-      "pioneer-announcment": "Publishers who wish to serve as auxiliary pioneers in {month} can choose between a requirement of 15 or 30 hours.",
-      "schedule": "Ministry Meetings",
-      "trolley": "Trolley and Truck Witnessing",
-      "infostand": "Infostand",
-      "co-visit": "Week of CO Visit"
-    },
-    "conventions": {
-      "announcment": "Announcements regarding upcoming Regional Conventions",
-      "invite": "Dear Brothers and Sisters,\n Your Congregation is invited to the following Conventions."
+  "conjunction": "and",
+  "date": "Date",
+  "time": "Time",
+  "topic": "Topic",
+  "location": "Location",
+  "radio": {
+    "title": "Radio Programm from Jehovahs Witnesses",
+    "description": "We would like to inform you about the broadcasting dates and topics of the radio programs for the year {year}."
+  },
+  "organisation": {
+    "cleaning": {
+      "title": "Cleaning of the Kingdomhall in Bad Arolsen",
+      "encouragement": "We all want to contribute to the cleaning of the Kingdom Hall. This contributes to a pleasant House of Worship and makes us known as a pure people who honor Jehovah God (1 Peter 1:16).",
+      "main-cleaning": "Main Cleaning",
+      "intermediate-cleaning": "Intermediate Cleaning",
+      "garden-maintainence": "Garden Maintenence"
     }
+  },
+  "ministry": {
+    "pioneer-announcment": "Publishers who wish to serve as auxiliary pioneers in {month} can choose between a requirement of 15 or 30 hours.",
+    "schedule": "Ministry Meetings",
+    "trolley": "Trolley and Truck Witnessing",
+    "infostand": "Infostand",
+    "co-visit": "Week of CO Visit",
+    "pioneer-announcement": "The proclaimers who wish to serve as auxiliary pioneers in {month} can choose between a requirement of 15 or 30 hours."
+  },
+  "conventions": {
+    "announcment": "Announcements regarding upcoming Regional Conventions",
+    "invite": "Dear Brothers and Sisters,\n Your Congregation is invited to the following Conventions."
+  }
 }
