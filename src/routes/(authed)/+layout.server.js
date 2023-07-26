@@ -1,7 +1,8 @@
 import { redirect } from '@sveltejs/kit';
+import { store } from '$lib/services/auth/amplifyFunctions';
 
-export function load({ cookies, url }) {
-	//if (!cookies.get('logged_in')) {
-		//throw redirect(303, `/login?redirectTo=${url.pathname}`);
-	//}
+export function load() {
+	if (store.user == null) {
+		throw redirect(303, `/login?redirectTo=${url.pathname}`);
+	}
 }

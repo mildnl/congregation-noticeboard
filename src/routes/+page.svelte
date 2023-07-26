@@ -7,6 +7,7 @@
   import setupI18n from '$lib/services/i18n/i18n'
   import { waitLocale } from 'svelte-i18n'
   import { onMount } from 'svelte';
+	import { store } from "$lib/services/auth/amplifyFunctions";
   let i18n = setupI18n('de');
   let language = 'de';
   export async function preload() {
@@ -24,6 +25,8 @@
     // Clear the timer if the component is unmounted
     //return () => clearTimeout(redirectTimer);
   });
+  let user = $store.user
+store.subscribe(() => user = $store.user)
 </script>
 <main>
   <Menu />
@@ -32,7 +35,12 @@
       <div class="w3-row">
         <div class="w3-center">
           <h1 in:scale out:fade>Wilkommen</h1>
+          <pre>{JSON.stringify($store,null,2)}</pre>
+		        {#if $store.user != null}
+		        <p>User</p>
+	        {:else}
 		        <SignIn />
+	        {/if}
         </div>
       </div>
     </div>

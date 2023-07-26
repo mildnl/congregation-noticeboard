@@ -47,8 +47,34 @@ export const logout = () => store.set(defaultData);
   }
 
   type ResendConfCodeParameters = {
-  username: string;
+    code: string;
+  };
+
+export async function verifyCurrentUserAttributeSubmit({code}:ResendConfCodeParameters) {
+  try {
+    await Auth.verifyCurrentUserAttributeSubmit('email',code);
+  } catch(err) {
+    console.log('failed with error', err);
+  }
 };
+
+export async function rememberDevice() {
+  try {
+    const result = await Auth.rememberDevice();
+    console.log(result)
+  } catch (error) {
+    console.log('Error remembering device', error)
+  }
+}
+
+export async function forgetDevice() {
+  try {
+    const result = await Auth.forgetDevice();
+    console.log(result)
+  } catch (error) {
+    console.log('Error forgetting device', error)
+  }
+}
 
 export async function resendConfirmationCode({ username }: ResendConfCodeParameters) {
   try {
