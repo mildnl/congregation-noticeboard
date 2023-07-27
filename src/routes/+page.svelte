@@ -36,7 +36,7 @@ store.subscribe(() => user = $store.user)
         <div class="w3-center">
           <h1 in:scale out:fade>Wilkommen</h1>
           <pre>{JSON.stringify($store,null,2)}</pre>
-		        {#if $store.user != null}
+		        {#if user != null}
 		        <p>User</p>
 	        {:else}
 		        <SignIn />
