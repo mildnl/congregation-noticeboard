@@ -3,53 +3,37 @@
 
 const awsmobile = {
     "aws_project_region": "eu-central-1",
-    "aws_cognito_identity_pool_id": "eu-central-1:c368c0b4-fbed-49cd-9a9e-b1d678ab1de1",
+    "aws_cognito_identity_pool_id": "eu-central-1:53ea6caf-7c9a-48d7-9fa8-ca9ba20a86df",
     "aws_cognito_region": "eu-central-1",
-    "aws_user_pools_id": "eu-central-1_PrMBMwjF2",
-    "aws_user_pools_web_client_id": "70gdlhn6bi6fedflsr0o3f2g2a",
-    "oauth": {
-        "domain": "congregation.auth.eu-central-1.amazoncognito.com"
-    },
+    "aws_user_pools_id": "eu-central-1_V6wvYrLEF",
+    "aws_user_pools_web_client_id": "2032s8h0b4900pa8urjinj7eg7",
+    "oauth": {},
     "aws_cognito_username_attributes": [],
     "aws_cognito_social_providers": [],
     "aws_cognito_signup_attributes": [
-        "GIVEN_NAME",
-        "FAMILY_NAME",
-        "EMAIL",
-        "PHONE_NUMBER"
+        "EMAIL"
     ],
-    "aws_cognito_mfa_configuration": "OPTIONAL",
+    "aws_cognito_mfa_configuration": "OFF",
     "aws_cognito_mfa_types": [
-        "SMS",
-        "TOTP"
+        "SMS"
     ],
     "aws_cognito_password_protection_settings": {
         "passwordPolicyMinLength": 8,
-        "passwordPolicyCharacters": [
-            "REQUIRES_LOWERCASE",
-            "REQUIRES_UPPERCASE",
-            "REQUIRES_NUMBERS",
-            "REQUIRES_SYMBOLS"
-        ]
+        "passwordPolicyCharacters": []
     },
     "aws_cognito_verification_mechanisms": [
         "EMAIL"
     ],
     "region": "eu-central-1",
-    "userPoolId": "eu-central-1_PrMBMwjF2",
-    "userPoolWebClientId": "70gdlhn6bi6fedflsr0o3f2g2a",
+    "userPoolId": "eu-central-1_V6wvYrLEF",
+    "userPoolWebClientId": "2032s8h0b4900pa8urjinj7eg7",
     "identityPoolId": "eu-central-1:c368c0b4-fbed-49cd-9a9e-b1d678ab1de1",
-     "cookieStorage": {
-      // REQUIRED - Cookie domain (only required if cookieStorage is provided)
-      "domain": '.markus-mildner.dev',
-      // OPTIONAL - Cookie path
-      "path": '/',
-      // OPTIONAL - Cookie expiration in days
-      "expires": 365,
-      // OPTIONAL - Cookie secure flag
-      // Either true or false, indicating if the cookie transmission requires a secure protocol (https).
-      "secure": false,
-    },
+    "cookieStorage": {
+        "domain": ".markus-mildner.dev",
+        "path": "/",
+        "expires": 365,
+        "secure": false
+    }
 };
 
 

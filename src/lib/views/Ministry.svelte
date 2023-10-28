@@ -50,11 +50,9 @@ footer a {
     <p on:click={toggleModalVisit(showModalVisit)} class="w3-bar-item w3-button w3-hover-yellow" style="width:33%">{$_('ministry.co-visit')}</p>
   </div>
 </div>
-<div class="w3-container">
-  <div class="w3-container">
-    <MinistrySchedule />
-  </div>
-</div>
+
+<MinistrySchedule />
+
 <Modal showModal={showModalInfoStand}>
   <!-- TODO add translation --> 
   <h4>{$_('ministry.infostand')} noch in Planung</h4>

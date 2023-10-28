@@ -1,99 +1,78 @@
  
-import type { CognitoUser } from 'amazon-cognito-identity-js';
 import { Auth } from 'aws-amplify';
-import { writable } from 'svelte/store';
+import { loggedIn, registering} from '$lib/services/stores'
 
-type DefaultData = {
-  user: CognitoUser | null,
-  userConfirmed: boolean,
-  userSub: string,
-};
-const defaultData: DefaultData = {
-    user: null,
-    userConfirmed: false,
-    userSub: '',
-};
 
-export const store = writable(defaultData);
-export const logout = () => store.set(defaultData);
-  
- type SignUpParameters = {
-    username: string;
-    password: string;
-    given_name: string;
-    family_name: string;
-    email: string;
-    phone_number: string;
-  };
+export const signIn = async (username: string, password: string) => {
+		try {
+      console.log("signIn clicked");
+			console.log(username, password);
+      const user = await Auth.signIn(username, password).then(() => loggedIn.set(true));
+			console.log(user);
+			return user;
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
-  export async function signUp({ username, password, email, phone_number, given_name, family_name }: SignUpParameters) {
-      try {
-          await Auth.signUp({
-        username,
-        password,
-        attributes: {
-            email,
-            phone_number,
-            given_name,
-            family_name,
-        },
-        autoSignIn: {
-          enabled: false,
-        },
-          }).then((data) => void store.set(data));
-    } catch (error: unknown) {
-    console.log('Error signing up:', error);
+	export async function signOut() {
+    try {
+      await Auth.signOut().then(() => loggedIn.set(false));
+      console.log('User logged out');
+      // Redirect or perform other actions on successful logout
+    } catch (error) {
+      console.log('Error:', error);
+      // Handle logout error
     }
   }
 
-  type ResendConfCodeParameters = {
-    code: string;
-  };
+export const signUp = async (username: string, password: string, email: string) => {
+		try {
+			console.log("Signup clicked");
+			console.log(username, password);
+      await Auth.signUp({
+        username,
+        password, 
+        attributes: {
+          email
+        },
+				autoSignIn: { 
+                   enabled: true,
+                }
+			}).then(() => registering.set(true));
 
-export async function verifyCurrentUserAttributeSubmit({code}:ResendConfCodeParameters) {
-  try {
-    await Auth.verifyCurrentUserAttributeSubmit('email',code);
-  } catch(err) {
-    console.log('failed with error', err);
-  }
-};
+		} catch (error) {
+			console.log('error signing up:', error);
+		}
+	};
 
-export async function rememberDevice() {
+	export async function confirmSignUp(username:string, code:string) {
   try {
-    const result = await Auth.rememberDevice();
-    console.log(result)
+    await Auth.confirmSignUp(username, code).then(() => loggedIn.set(true));
   } catch (error) {
-    console.log('Error remembering device', error)
+    console.log('error confirming sign up', error);
   }
 }
 
-export async function forgetDevice() {
-  try {
-    const result = await Auth.forgetDevice();
-    console.log(result)
-  } catch (error) {
-    console.log('Error forgetting device', error)
-  }
-}
+	export const getCurrentUser = async () => {
+		try {
+            console.log("getCurrentUser clicked");
+			const user = await Auth.currentAuthenticatedUser({
+				bypassCache: false,
+			});
+			console.log(user);
+			console.info(JSON.stringify(user));
+			return user;
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
-export async function resendConfirmationCode({ username }: ResendConfCodeParameters) {
+	export async function resendConfirmationCode(username:string) {
   try {
     await Auth.resendSignUp(username);
     console.log('code resent successfully');
   } catch (err) {
     console.log('error resending code: ', err);
-  }
-}
-
- type SignInParameters = {
-    username: string;
-     password: string;
-  };
-
-export async function signIn({ username, password }: SignInParameters ) {
-  try {
-    await Auth.signIn(username, password).then((data) => void store.set(data));
-  } catch (error) {
-    console.log('error signing in', error);
   }
 }
