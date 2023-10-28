@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '../assets/styles/w3.css';
+  import '../../assets/styles/w3.css';
   import SignIn from "$lib/components/SignIn.svelte";
 	import SignUp from "$lib/components/SignUp.svelte";
   import {loggedIn} from "$lib/services/stores"
