@@ -1,9 +1,8 @@
 <script>
-// @ts-nocheck
 
   import { Popover, Button } from 'flowbite-svelte'
   import { _ } from 'svelte-i18n';
-  export let meetingData;
+  export let meetingData; 
 
   let placement;
 </script>
@@ -111,12 +110,12 @@ h4 {
         <ul>
           {#each meetingData.life.parts as part}
             <li>
-              <p>{part.title} ({part.time} Min.) {part.assingee}</p>
+              <p>{part.title} ({part.time} Min.) {part.assignee}</p>
             </li>
           {/each}
           <li>
-            <p>{$_('meeting.life.congregation-biblestudy')} (30 Min.) {meetingData.congregationBibleStudy.assignee}</p>
-            <p>{$_('meeting.life.reader')}: {meetingData.congregationBibleStudy.reader}</p>
+            <p>{$_('meeting.life.congregation-biblestudy')} (30 Min.) {meetingData.life.congregationBibleStudy.assignee}</p>
+            <p>{$_('meeting.life.reader')}: {meetingData.life.congregationBibleStudy.reader}</p>
           </li>
         </ul>
         <h4>{$_('meeting.final-comments')} (3 Min.)</h4>
