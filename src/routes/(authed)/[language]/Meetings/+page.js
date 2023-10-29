@@ -10,10 +10,10 @@ export function load() {
                 middle: 56,
                 end: 86
             },
-            tresures: {
+            treasures: {
                 talk: "Du kannst Jehova dienen – trotz einer schwierigen Kindheit",
                 talkAssignee: "Daniel Heinrich",
-                tresuresAssignee: "Lothar Weigmann",
+                treasuresAssignee: "Lothar Weigmann",
                 bibleReading: "Marius Schmidt"
             },
             ministry: {

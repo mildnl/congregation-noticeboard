@@ -1,34 +1,15 @@
 <script lang="ts">
-  import '../assets/styles/w3.css';
-  import Menu from '$lib/components/Menu.svelte';
-  import setupI18n from '$lib/services/i18n/i18n';
-  import { waitLocale } from 'svelte-i18n';
-  import {language} from "$lib/services/stores";
-	import { onDestroy } from "svelte";
-	import Meetings from '$lib/views/Meetings.svelte';
-
-  let lang = 'de';
-  let unsubscribe = language.subscribe((value) => {
-    lang = value;
-  });
-
-  setupI18n(lang);
-
-  export async function preload() {
-    return waitLocale(lang);
-  }
-
-  onDestroy(unsubscribe);
+  import { goto } from '$app/navigation';
 </script>
 
-<main>
-  <Menu />
-  <div id="main" class="w3-container">
-    <div class="w3-row">
-      <div class="w3-center">
-        <Meetings meetingData={null} />
-      </div>
-    </div>
+<div class="w3-container w3-center">
+  <h1>Herzlich willkommen in unserer Versammlung</h1>
+  <p>Dies ist eine kurze Einführung in unsere Versammlung. Weitere Informationen zu unseren Versammlungen, Veranstaltungen und Aktivitäten finden Sie hier.</p>
+
+  <div class="w3-row">
+    <button class="w3-btn w3-black" on:click={() => goto('/login')}>Einloggen</button>
+    <button class="w3-btn w3-black" on:click={() => goto('/meetings')}>Versammlungen</button>
   </div>
-</main>
+  <p>Hinweis: Namen werden nur angezeigt, wenn Sie eingeloggt sind.</p>
+</div>
 

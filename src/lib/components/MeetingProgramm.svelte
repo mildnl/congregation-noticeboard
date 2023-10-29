@@ -1,64 +1,9 @@
 <script>
-import { Popover, Button } from 'flowbite-svelte'
-import { _ } from 'svelte-i18n';
-  let assignees = {
-    president: '',
-    treasures: {
-      talk: '',
-      gems: '',
-      reading: ''
-    },
-  ministryFirstCall: [], 
-  ministryReturnVisit: [], 
-  ministryBibleStudy: '', 
-  ministryTalk: '', 
-  lifeParts: [], 
-  congregationBibleStudy: {
-    assignee: '', 
-    reader: '', 
-  },
-  attendants: {
-    audio: 0, 
-    video: 0, 
-    zoom: 0, 
-    security: 0, 
-    hall: 0, 
-    microphones: 0, 
-    podium: 0, 
-  },
-};
+// @ts-nocheck
 
-export const meetingData = {
-  date: '', 
-  readingProgramm: '', 
-  songs: {
-    initial: 0, 
-    middle: 0, 
-    end: 0, 
-  },
-  treasures: {
-    talk: '', 
-    gems: 0, 
-    bibleReading: '', 
-  },
-  ministry: {
-    firstCall: [], 
-    returnVisit: [], 
-    bibleStudy: '', 
-    talk: '', 
-  },
-  life: {
-    parts: [{
-      title: '',
-      time: '',
-      assingee: ''
-    }],
-    congregationBibleStudy: {
-      reader: '',
-    },
-  },
-  assignees,
-};
+  import { Popover, Button } from 'flowbite-svelte'
+  import { _ } from 'svelte-i18n';
+  export let meetingData;
 
   let placement;
 </script>
@@ -92,16 +37,16 @@ h4 {
       </div>
       <Button class="w3-right w3-cell w3-margin-right w3-button w3-border" id="placement-left" on:mouseenter={()=> placement="left"}>Technick/Audio</Button>
         <Popover triggeredBy="[id^='placement-']" {placement} class="w3-right w3-cell w3-margin-right" title="Technick/Audio">
-              <p><b>{$_('meeting.attendants.audio')}</b>: {assignees.attendants.audio}</p>
-              <p><b>{$_('meeting.attendants.video')}</b>: {assignees.attendants.video}</p>
-              <p><b>{$_('meeting.attendants.zoom')}</b>: {assignees.attendants.zoom}</p>
-              <p><b>{$_('meeting.attendants.security')}</b>: {assignees.attendants.security}</p>
-              <p><b>{$_('meeting.attendants.hall-attendants')}</b>: {assignees.attendants.hall}</p>
-              <p><b>{$_('meeting.attendants.microphones')}</b>: {assignees.attendants.microphones}</p>
-              <p><b>{$_('meeting.attendants.podium')}</b>: {assignees.attendants.podium}</p>
+              <p><b>{$_('meeting.attendants.audio')}</b>: {meetingData.attendants.audio}</p>
+              <p><b>{$_('meeting.attendants.video')}</b>: {meetingData.attendants.video}</p>
+              <p><b>{$_('meeting.attendants.zoom')}</b>: {meetingData.attendants.zoom}</p>
+              <p><b>{$_('meeting.attendants.security')}</b>: {meetingData.attendants.security}</p>
+              <p><b>{$_('meeting.attendants.hall-attendants')}</b>: {meetingData.attendants.hall}</p>
+              <p><b>{$_('meeting.attendants.microphones')}</b>: {meetingData.attendants.microphones}</p>
+              <p><b>{$_('meeting.attendants.podium')}</b>: {meetingData.attendants.podium}</p>
         </Popover>
-      <h4>{$_('meeting.president')}: {assignees.president}</h4>
-      <h4 class="meeting-song">{$_('meeting.song')} {meetingData.songs.initial} {$_('conjunction')} {$_('meeting.prayer')} : {assignees.president}</h4>
+      <h4>{$_('meeting.president')}: {meetingData.president}</h4>
+      <h4 class="meeting-song">{$_('meeting.song')} {meetingData.songs.initial} {$_('conjunction')} {$_('meeting.prayer')} : {meetingData.president}</h4>
       <h4 class="meeting-subtitle">{$_('meeting.initial-comments')} (1 Min.)</h4>
     </div>
 
@@ -112,13 +57,13 @@ h4 {
       </div>
       <ul>
         <li>
-          <p>{meetingData.treasures.talk} (10 Min.) {assignees.treasures.talk}</p>
+          <p>{meetingData.treasures.talk} (10 Min.) {meetingData.treasures.talkAssignee}</p>
         </li>
         <li>
-          <p>{$_('meeting.treasures.gems')} (10 Min.) {assignees.treasures.gems}</p>
+          <p>{$_('meeting.treasures.gems')} (10 Min.) {meetingData.treasures.treasuresAssignee}</p>
         </li>
         <li>
-          <p>{$_('meeting.treasures.bible-reading')} (4 Min.) {assignees.treasures.reading}</p>
+          <p>{$_('meeting.treasures.bible-reading')} (4 Min.) {meetingData.treasures.bibleReading}</p>
         </li>
       </ul>
     </div>
@@ -170,8 +115,8 @@ h4 {
             </li>
           {/each}
           <li>
-            <p>{$_('meeting.life.congregation-biblestudy')} (30 Min.) {assignees.congregationBibleStudy.assignee}</p>
-            <p>{$_('meeting.life.reader')}: {assignees.congregationBibleStudy.reader}</p>
+            <p>{$_('meeting.life.congregation-biblestudy')} (30 Min.) {meetingData.congregationBibleStudy.assignee}</p>
+            <p>{$_('meeting.life.reader')}: {meetingData.congregationBibleStudy.reader}</p>
           </li>
         </ul>
         <h4>{$_('meeting.final-comments')} (3 Min.)</h4>
