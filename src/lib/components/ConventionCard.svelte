@@ -4,7 +4,7 @@ import { _ } from 'svelte-i18n';
     date: null,
     location: null,
     host: null
-  }
+  };
 </script>
 <div class="w3-container s3-margin">
   <div class="w3-card-4 w3-padding">

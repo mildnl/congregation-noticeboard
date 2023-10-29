@@ -1,7 +1,7 @@
 <script>
-// @ts-nocheck
-
   import { _ } from 'svelte-i18n';
+  import {language} from '$lib/services/stores'
+	import { onDestroy } from 'svelte';
   /**
 	 * @type {number}
 	 */
@@ -21,7 +21,13 @@
     document.getElementById("main").style.marginLeft = "0%";
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("openNav").style.display = "inline-block";
-  }
+  };
+
+  let currentLanguage = 'de';
+  let unsubscribe = language.subscribe((value) => {
+    currentLanguage = value;
+  })
+  onDestroy(unsubscribe);
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
@@ -79,5 +85,12 @@
                 {$_('menu.admin')}
             {/if}   
             </a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Language {currentLanguage}</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <button on:click={() => language.set('de')}  class="w3-bar-item w3-button">DE</button >
+                    <button on:click={() => language.set('en')} class="w3-bar-item w3-button">EN</button >
+                </div>
+            </div>
         </div>
 </div>

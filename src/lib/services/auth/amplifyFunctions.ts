@@ -5,10 +5,7 @@ import { loggedIn, registering} from '$lib/services/stores'
 
 export const signIn = async (username: string, password: string) => {
 		try {
-      console.log("signIn clicked");
-			console.log(username, password);
-      const user = await Auth.signIn(username, password).then(() => loggedIn.set(true));
-			console.log(user);
+			const user = await Auth.signIn(username, password).then(() => loggedIn.set(true));
 			return user;
 		} catch (error) {
 			console.error(error);
@@ -48,7 +45,10 @@ export const signUp = async (username: string, password: string, email: string) 
 
 	export async function confirmSignUp(username:string, code:string) {
   try {
-    await Auth.confirmSignUp(username, code).then(() => loggedIn.set(true));
+	  await Auth.confirmSignUp(username, code).then(() => {
+		  loggedIn.set(true);
+		  registering.set(false);
+	  });
   } catch (error) {
     console.log('error confirming sign up', error);
   }

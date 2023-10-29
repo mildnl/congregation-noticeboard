@@ -8,6 +8,9 @@ init({
     initialLocale: getLocaleFromNavigator(),
   })
 
+/**
+ * @param {string | null} defaultLocale
+ */
 async function setupI18n(defaultLocale) {
   let language = defaultLocale == null ? 'de' : defaultLocale;
   init({

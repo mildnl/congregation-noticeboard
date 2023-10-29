@@ -1,7 +1,15 @@
 <script>
   import AnnouncementItem from '../components/AnnouncementItem.svelte';
   import { _ } from 'svelte-i18n';
-  export let announcementItems;
+  export let announcementItems = [{
+    date: null,
+    announcments: [
+        {
+            title: null,
+            text: null
+        }
+    ]
+  }];
 </script>
 
 <div class="w3-container">

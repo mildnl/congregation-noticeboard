@@ -1,8 +1,7 @@
 <script>
-    import { useForm, validators, HintGroup, Hint, email, required } from "svelte-use-form";
 
 import { _ } from 'svelte-i18n';
-  const form = useForm();
+
   let meetingData = {
     date: "29. Mai",
     readingProgramm: "2 Cronika 28-29",
@@ -39,7 +38,7 @@ import { _ } from 'svelte-i18n';
   }
 </script>
 
-    <form use:form class="w3-container">
+    <form class="w3-container">
 
         <label class="w3-text-green" for="date"><b>{$_('date')}</b></label>
         <input class="w3-input w3-border" type="date" name="date">

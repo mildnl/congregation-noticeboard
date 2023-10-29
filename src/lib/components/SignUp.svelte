@@ -1,5 +1,5 @@
 <script>
-import { signIn, signOut, signUp, getCurrentUser, confirmSignUp, resendConfirmationCode } from '$lib/services/auth/amplifyFunctions';
+import { signUp, confirmSignUp, resendConfirmationCode } from '$lib/services/auth/amplifyFunctions';
 import { registering } from "$lib/services/stores";
 import Modal from '$lib/components/Modal.svelte';
 import { onDestroy } from 'svelte';
@@ -35,16 +35,16 @@ onDestroy(unsubscribe);
 
   <div class="w3-half w3-padding">
     <label class="w3-text-black" for="given_name"><b>First Name</b></label>
-    <input class="w3-input w3-border" type="text" placeholder="Enter First Name" name="given_name" required bind:value={givenName} />
+    <input class="w3-input w3-border" type="text" placeholder="Enter First Name" name="given_name"  bind:value={givenName} />
 
     <label class="w3-text-black" for="family_name"><b>Last Name</b></label>
-    <input class="w3-input w3-border" type="text" placeholder="Enter Last Name" name="family_name" required bind:value={familyName} />
+    <input class="w3-input w3-border" type="text" placeholder="Enter Last Name" name="family_name"  bind:value={familyName} />
 
     <label class="w3-text-black" for="email"><b>Email</b></label>
     <input class="w3-input w3-border" type="email" placeholder="Enter Email" name="email" required bind:value={email} />
 
     <label class="w3-text-black" for="phone_number"><b>Phone Number</b></label>
-    <input class="w3-input w3-border" type="text" placeholder="Enter Phone Number" name="phone_number" required bind:value={phoneNumber} />
+    <input class="w3-input w3-border" type="text" placeholder="Enter Phone Number" name="phone_number"  bind:value={phoneNumber} />
   </div>
   <button class="w3-btn w3-black" type="submit" on:click={() => signUp(username, psw, email)}>Register</button>
 </div>
@@ -53,6 +53,6 @@ onDestroy(unsubscribe);
 <Modal showModal={isRegistering}>
   <label for="code"><b>Code</b></label>
   <input type="text" placeholder="Enter code" name="code" required bind:value={code} />
-  <button on:click={() => confirmSignUp(email, code)}>Verify code</button>
+  <button on:click={() => confirmSignUp(username, code)}>Verify code</button>
   <button on:click={() => resendConfirmationCode(username)}>Resend code</button>
 </Modal>

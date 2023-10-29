@@ -8,7 +8,7 @@ import { _ } from 'svelte-i18n';
             text: null
         }
     ]
-  }
+  };
 </script>
 <div class="w3-container w3-margin-left">
     <h5>{announcmentData.date}</h5>

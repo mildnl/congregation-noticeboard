@@ -1,14 +1,22 @@
-<script>
-    import Calendar from '@event-calendar/core';
-    import TimeGrid from '@event-calendar/time-grid';
-    import DayGridMonth from '@event-calendar/day-grid';
-    import ListGrid from '@event-calendar/list';
-import { _, locale } from 'svelte-i18n';
+<script lang='ts'>
+  import Calendar from '@event-calendar/core';
+  import TimeGrid from '@event-calendar/time-grid';
+  import DayGridMonth from '@event-calendar/day-grid';
+  import ListGrid from '@event-calendar/list';
+  import {language} from '$lib/services/stores'
+  import { _ } from 'svelte-i18n';
+	import { onDestroy } from 'svelte';
+
+  let currentLanguage = 'de';
+  let unsubscribe = language.subscribe((value) => {
+    currentLanguage = value;
+  });
+  onDestroy(unsubscribe);
 
     const currentDate = new Date();
-    const currentMonth = currentDate.toLocaleString(locale, { month: 'long' });
+    const currentMonth = currentDate.toLocaleString(currentLanguage, { month: 'long' });
 
-    function generateEvent(title, startDate, endDate, time) {
+    function generateEvent(title:string, startDate: string | number | Date, endDate: Date, time: string) {
         const startTime = new Date(startDate);
         const [hours, minutes] = time.split(':');
         startTime.setHours(Number(hours), Number(minutes));
@@ -22,7 +30,7 @@ import { _, locale } from 'svelte-i18n';
         };
     }
 
-    function generateEvents(title, dayOfWeek, repeatSchedule, time) {
+    function generateEvents(title:string, dayOfWeek:string, repeatSchedule:string, time:string) {
       const startDate = new Date(); // Current date and time
 
       // Set the start day to the next occurrence of the specified day of the week
@@ -33,7 +41,7 @@ import { _, locale } from 'svelte-i18n';
       const events = [generateEvent(title, startDate, startDate, time)];
 
       // Helper function to add events based on the given interval
-      function addEventByInterval(interval) {
+      function addEventByInterval(interval:number) {
         for (let i = 1; i < interval; i++) {
           startDate.setDate(startDate.getDate() + interval); // Add interval days
           events.push(generateEvent(title, startDate, startDate, time));
@@ -52,7 +60,7 @@ import { _, locale } from 'svelte-i18n';
       return events;
     }
 
-    function daysToNumber(dayOfWeek) {
+    function daysToNumber(dayOfWeek:string) {
       const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       return days.indexOf(dayOfWeek);
     }
