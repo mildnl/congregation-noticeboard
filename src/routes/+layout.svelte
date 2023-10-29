@@ -44,8 +44,8 @@
 
 <main>
   <Menu/>
-  <div id="main" class="w3-container">
-      <div class="w3-row">
+  <div id="main" class="w3-container w3-padding-64">
+      <div class="w3-row w3-padding">
           <slot />
       </div>
   </div>
