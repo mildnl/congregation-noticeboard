@@ -1,21 +1,31 @@
  
 import { Auth } from 'aws-amplify';
-import { loggedIn, registering} from '$lib/services/stores'
+import { loggedIn, registering } from '$lib/services/stores'
 
 
-export const signIn = async (username: string, password: string) => {
-		try {
-			const user = await Auth.signIn(username, password).then(() => loggedIn.set(true));
-			return user;
-		} catch (error) {
-			console.error(error);
-		}
-	};
+type SignInParameters = {
+  username: string;
+  password: string;
+};
+
+export async function signIn({ username, password }: SignInParameters) {
+	try {
+	  console.log("signing in");
+		console.log(username);
+		console.log(password);
+	  const user = await Auth.signIn(username, password);
+	  loggedIn.set(true);
+	  console.log(user);
+  } catch (error) {
+    console.log('error signing in', error);
+  }
+};
 
 	export async function signOut() {
     try {
-      await Auth.signOut().then(() => loggedIn.set(false));
-      console.log('User logged out');
+		await Auth.signOut();
+		loggedIn.set(false);
+      	console.log('User logged out');
       // Redirect or perform other actions on successful logout
     } catch (error) {
       console.log('Error:', error);
@@ -23,32 +33,43 @@ export const signIn = async (username: string, password: string) => {
     }
   }
 
-export const signUp = async (username: string, password: string, email: string) => {
-		try {
-			console.log("Signup clicked");
-			console.log(username, password);
-      await Auth.signUp({
-        username,
-        password, 
-        attributes: {
-          email
-        },
-				autoSignIn: { 
-                   enabled: true,
-                }
-			}).then(() => registering.set(true));
+type SignUpParameters = {
+  username: string;
+  password: string;
+  email: string;
+  phoneNumber: string;
+};
 
-		} catch (error) {
-			console.log('error signing up:', error);
-		}
-	};
-
-	export async function confirmSignUp(username:string, code:string) {
+export async function signUp({ username, password, email, phoneNumber }: SignUpParameters) {
   try {
-	  await Auth.confirmSignUp(username, code).then(() => {
-		  loggedIn.set(true);
-		  registering.set(false);
-	  });
+    const { user } = await Auth.signUp({
+      username,
+      password,
+      attributes: {
+        email, // optional
+        phoneNumber, // optional - E.164 number convention
+        // other custom attributes
+      },
+      autoSignIn: {
+        enabled: false,
+      },
+    });
+	  console.log(user);
+	  registering.set(true);
+  } catch (error) {
+    console.log('error signing up:', error);
+  }
+}
+
+type ConfirmSignUpParameters = {
+  username: string;
+  code: string;
+};
+
+export async function confirmSignUp({ username, code }: ConfirmSignUpParameters) {
+  try {
+	  await Auth.confirmSignUp(username, code);
+	  registering.set(false);
   } catch (error) {
     console.log('error confirming sign up', error);
   }

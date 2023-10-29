@@ -27,13 +27,7 @@ const awsmobile = {
     "region": "eu-central-1",
     "userPoolId": "eu-central-1_V6wvYrLEF",
     "userPoolWebClientId": "2032s8h0b4900pa8urjinj7eg7",
-    "identityPoolId": "eu-central-1:c368c0b4-fbed-49cd-9a9e-b1d678ab1de1",
-    "cookieStorage": {
-        "domain": ".markus-mildner.dev",
-        "path": "/",
-        "expires": 365,
-        "secure": false
-    }
+    "identityPoolId": "eu-central-1:c368c0b4-fbed-49cd-9a9e-b1d678ab1de1"
 };
 
 

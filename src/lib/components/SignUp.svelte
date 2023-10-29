@@ -51,8 +51,12 @@ onDestroy(unsubscribe);
 
 
 <Modal showModal={isRegistering}>
-  <label for="code"><b>Code</b></label>
-  <input type="text" placeholder="Enter code" name="code" required bind:value={code} />
-  <button on:click={() => confirmSignUp(username, code)}>Verify code</button>
-  <button on:click={() => resendConfirmationCode(username)}>Resend code</button>
+	<div class="w3-padding">
+		<label class="w3-text-black" for="uname"><b>Username</b></label>
+	<input class="w3-input w3-border" type="text" placeholder="Enter Username" name="uname" required bind:value={username} />
+		<label class="w3-text-black"  for="code"><b>Code</b></label>
+  	<input class="w3-input w3-border" type="text" placeholder="Enter code" name="code" required bind:value={code} />
+  	<button class="w3-btn w3-black" on:click={() => confirmSignUp(username, code)}>Verify code</button>
+  	<button class="w3-btn w3-black" on:click={() => resendConfirmationCode(username)}>Resend code</button>
+	</div>
 </Modal>

@@ -1,7 +1,9 @@
 <script>
+// @ts-nocheck
+    import { waitLocale } from 'svelte-i18n';
   import { _ } from 'svelte-i18n';
   import {language} from '$lib/services/stores'
-	import { onDestroy } from 'svelte';
+
   /**
 	 * @type {number}
 	 */
@@ -23,11 +25,14 @@
     document.getElementById("openNav").style.display = "inline-block";
   };
 
-  let currentLanguage = 'de';
-  let unsubscribe = language.subscribe((value) => {
+  let currentLanguage;
+  language.subscribe((value) => {
     currentLanguage = value;
-  })
-  onDestroy(unsubscribe);
+  });
+
+  export async function preload() {
+    return waitLocale(lang);
+  }
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />

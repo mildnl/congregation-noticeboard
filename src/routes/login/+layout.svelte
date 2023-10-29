@@ -23,8 +23,7 @@
   <Menu/>
   <div id="main" class="w3-container">
       <div class="w3-row">
-          <slot></slot>
+          <slot />
       </div>
   </div>
 </main>
-

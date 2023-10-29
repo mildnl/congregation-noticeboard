@@ -10,17 +10,15 @@
     background-color: whitesmoke;
   }
 
-  footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
+  .fixed-footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
 
   footer a {
     color: #000;
@@ -30,7 +28,7 @@
 
 <slot />
 
-<footer class="w3-container w3-center w3-padding">
+<footer class="w3-container w3-center w3-padding fixed-footer">
   <a href="https://www.flaticon.com/de/kostenlose-icons/diamant" title="diamant Icons">Diamant</a>
   <a href="https://www.flaticon.com/de/kostenlose-icons/weizen" title="weizen Icons">Wheat</a>
   <a href="https://www.flaticon.com/de/kostenlose-icons/meeting" title="meeting Icons">Meeting</a>
