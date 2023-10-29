@@ -76,18 +76,18 @@
     let events = combineLists(jaegerSaturday,meyerSaturday,meyerThursday,mollThursday)
     let plugins = [TimeGrid, DayGridMonth, ListGrid];
     let options = {
-        view: 'timeGridWeek',
-        height: '800px',
-        headerToolbar: {
-            start: 'prev,next today',
-            center: 'title',
-            end: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek resourceTimeGridWeek'
-        },
-        scrollTime: '09:00:00',
-        dayMaxEvents: true,
-        nowIndicator: true,
-        events: events
-    };
+    view: window.innerWidth < 768 ? 'dayGridMonth' : 'timeGridWeek', // Change the view based on the screen width
+    height: window.innerWidth < 768 ? 'auto' : '800px', // Adjust the height based on the screen width
+    headerToolbar: {
+      start: 'prev,next today',
+      center: 'title',
+      end: window.innerWidth < 768 ? 'dayGridMonth' : 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+    },
+    scrollTime: '09:00:00',
+    dayMaxEvents: true,
+    nowIndicator: true,
+    events: events,
+  };
 </script>
 <div class="w3-container">
     <div class="w3-panel">
