@@ -1,6 +1,8 @@
  
 import { Auth } from 'aws-amplify';
-import { loggedIn, registering } from '$lib/services/stores'
+import { loggedIn, registering } from '$lib/services/stores';
+import type { CognitoUser } from '@aws-amplify/auth';
+
 
 
 type SignInParameters = {
@@ -9,13 +11,13 @@ type SignInParameters = {
 };
 
 export async function signIn({ username, password }: SignInParameters) {
-	try {
-	  console.log("signing in");
-		console.log(username);
-		console.log(password);
-	  const user = await Auth.signIn(username, password);
-	  loggedIn.set(true);
-	  console.log(user);
+  try {
+    const user:CognitoUser = await Auth.signIn(username, password).then((value) => {
+      loggedIn.set(true);
+      return value;
+    });
+
+    return user;
   } catch (error) {
     console.log('error signing in', error);
   }
@@ -23,9 +25,9 @@ export async function signIn({ username, password }: SignInParameters) {
 
 	export async function signOut() {
     try {
-		await Auth.signOut();
-		loggedIn.set(false);
-      	console.log('User logged out');
+		  await Auth.signOut();
+		  loggedIn.set(false);
+      console.log('User logged out');
       // Redirect or perform other actions on successful logout
     } catch (error) {
       console.log('Error:', error);

@@ -5,10 +5,9 @@
   import {loggedIn} from "$lib/services/stores";
 	import { onDestroy } from "svelte";
   import {signOut, getCurrentUser} from '$lib/services/auth/amplifyFunctions';
-  
+
 
   let isSignIn = true; 
-
   let isLoggedIn = false;
 
 
@@ -21,6 +20,7 @@
   }
 
   onDestroy(unsubscribe);
+
 </script>
 <div class="w3-padding">
   <div class="w3-bar w3-white w3-border">

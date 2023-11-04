@@ -82,7 +82,10 @@
       "host-bethel": "Mit einem Vertreter des Zweigbüros"
     },
     "admin": {
-      "title": "Einstellungen für Älteste"
+      "title": "Einstellungen",
+      "login": "Einloggen",
+      "logout": "Ausloggen",
+      "sign-up": "Registrieren"
     }
 
 }

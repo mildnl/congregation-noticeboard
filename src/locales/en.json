@@ -77,5 +77,11 @@
     "conventions": {
       "announcment": "Announcements regarding upcoming Regional Conventions",
       "invite": "Dear Brothers and Sisters,\n Your Congregation is invited to the following Conventions."
+    },
+    "admin": {
+      "title": "Settings",
+      "login": "Login",
+      "logout": "Logout",
+      "sign-up": "Signup"
     }
 }
